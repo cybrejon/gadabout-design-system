@@ -1,0 +1,26 @@
+import { Canvas, Meta, Controls } from '@storybook/addon-docs/blocks';
+
+import * as ContainerStories from '../stories/Container.stories.svelte';
+
+<Meta of={ContainerStories} />
+
+# Container Wrapper
+
+The atomic container component for Gadabout.ai views.  
+Default styling: `rounded-2xl border border-[1.75px] bg-card p-5` (can be overriden)
+
+<Canvas of={ContainerStories.Main} />
+
+<Controls />
+
+## Usage Guidelines
+
+### When to use
+- Use to wrap related content to provide consistent visual structure and spacing.
+- Use to create a distinct section or "card" within a view.
+
+### When not to use
+- Avoid nesting containers too deeply, as this can lead to excessive padding and visual clutter.
+
+### Best practices
+- Use the `class` prop to adjust padding or background if the default `bg-card` doesn't fit the context.

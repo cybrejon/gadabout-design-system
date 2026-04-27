@@ -1,0 +1,28 @@
+import { Canvas, Meta, Controls, Primary } from '@storybook/addon-docs/blocks';
+
+import * as ToggleStories from '../stories/Toggle.stories.svelte';
+
+<Meta of={ToggleStories} />
+
+# Toggle
+
+This is the atomic Toggle component.
+
+Normally you would bind the **pressed** prop if you need to cycle between content states or handle events. I have yet to figure out how to do this with storybook.
+
+<Canvas of={ToggleStories.Normal} />
+
+<Controls />
+
+## Usage Guidelines
+
+### When to use
+- Use for binary settings that take effect immediately when changed.
+- Use for "On/Off" or "Show/Hide" interactions.
+
+### When not to use
+- Do not use in forms where the change should only be saved when the user clicks "Submit". Use a Checkbox instead.
+
+### Best practices
+- Ensure the label clearly indicates what is being toggled.
+- Use the `pressed` state to visually distinguish between the "on" and "off" states.

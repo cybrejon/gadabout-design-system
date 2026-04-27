@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+@plugin '@iconify/tailwind4';
+
+:root {
+	--font-inter: 'Inter Variable', sans-serif;
+}
+
+@theme {
+	--font-display: var(--font-inter);
+
+	--color-primary: #284841;
+	--color-primary-foreground: #ffffff;
+	--color-secondary: #5d7f16;
+	--color-accent: #ea5600;
+	--color-destructive: #c32121;
+
+	--color-foreground: #152622;
+	--color-foreground-alt: #838383;
+	--color-background: #ecf4f2;
+
+	--color-card: #f5fffc;
+	--color-border: #d5d9d8;
+
+	--default-ring-width: 1.25px;
+	--default-border-width: 1.25px;
+
+	--text-xxs: 0.65rem;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+hr {
+	border-color: var(--color-border);
+}
+
+body {
+	font-family: var(--font-display);
+	background-color: var(--color-background);
+	color: var(--color-foreground);
+}
+
+@utility border {
+	border-color: var(--color-border);
+}
+
+@utility site-noise-overlay {
+	background-image: url('/src/lib/images/noise.png');
+}
+
+@plugin '@iconify/tailwind4' {
+	scale: 1.2;
+}

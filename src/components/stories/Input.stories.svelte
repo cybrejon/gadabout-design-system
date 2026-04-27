@@ -1,0 +1,53 @@
+<script module>
+	import { defineMeta } from '@storybook/addon-svelte-csf';
+
+	import Input from '../atoms/Input.svelte';
+	import ContainerDecorator from '../utils/ContainerDecorator.svelte';
+
+	const { Story } = defineMeta({
+		title: 'Component/Molecules/Forms/Input',
+		component: Input,
+		parameters: {
+			docs: {
+				controls: {
+					exclude: ['placeholder']
+				}
+			}
+		},
+		tags: ['autodocs'],
+		// @ts-expect-error: seems to be a bug => https://github.com/storybookjs/storybook/issues/29951
+		decorators: [() => ContainerDecorator]
+	});
+</script>
+
+<Story
+	name="Normal"
+	args={{
+		placeholder: 'placeholder'
+	}}
+/>
+
+<Story
+	name="Label"
+	args={{
+		placeholder: 'placeholder',
+		label: 'Label'
+	}}
+/>
+
+<Story
+	name="Icon"
+	args={{
+		placeholder: 'Search',
+		icon: 'icon-[lucide--search]'
+	}}
+/>
+
+<Story
+	name="CombinedLabels"
+	args={{
+		placeholder: 'placeholder',
+		label: 'Label',
+		label_bottom: 'Bottom label'
+	}}
+/>

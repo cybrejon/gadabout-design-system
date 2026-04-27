@@ -1,0 +1,78 @@
+<script lang="ts" module>
+	export type ButtonVariants =
+		| 'normal'
+		| 'ghost'
+		| 'outline'
+		| 'text'
+		| 'destructive'
+		| 'outline alt';
+	export type ButtonSizes = 'normal' | 'sm' | 'text' | 'text md' | 'text sm' | 'sidebar';
+</script>
+
+<script lang="ts">
+	import { Button } from 'bits-ui';
+	import type { MouseEventHandler } from 'svelte/elements';
+	import type { Snippet } from 'svelte';
+
+	interface Props {
+		children: Snippet;
+		variant?: ButtonVariants;
+		href?: string;
+		size?: ButtonSizes;
+		class?: string;
+		onclick?: MouseEventHandler<HTMLButtonElement>;
+	}
+	let {
+		children,
+		variant = 'normal',
+		href,
+		size = 'normal',
+		class: style,
+		onclick,
+		...restProps
+	}: Props = $props();
+
+	let styles: Record<ButtonVariants, string> = {
+		normal: 'bg-primary text-primary-foreground active:text-primary-foreground/80',
+		destructive: 'bg-destructive text-primary-foreground active:text-primary-foreground/80',
+		ghost: 'hover:bg-primary/10 active:bg-primary/20',
+		'outline alt':
+			'hover:bg-primary/10 active:bg-primary/20 bg-primary/5 inset-ring inset-ring-primary/10',
+		outline:
+			'hover:bg-primary/10 active:bg-primary inset-ring-[1.45px] inset-ring-primary active:text-primary-foreground',
+		text: 'hover:text-secondary'
+	};
+
+	let sizes: Record<ButtonSizes, string> = {
+		normal: 'px-6 py-3 gap-3 text-base text-sm',
+		sm: 'px-4 py-2 gap-2 text-xs',
+		text: 'gap-2',
+		'text md': 'gap-2 text-sm',
+		'text sm': 'gap-2 text-xs',
+		sidebar: 'w-full justify-start rounded-xl px-4 py-2 gap-3 text-sm'
+	};
+</script>
+
+{#if href}
+	<Button.Root
+		{href}
+		{...restProps}
+		class="inline-flex cursor-pointer flex-nowrap items-center justify-center rounded-full align-middle font-medium outline-offset-4 transition-colors {styles[
+			variant
+		]}
+	{sizes[size]} {style}"
+	>
+		{@render children()}
+	</Button.Root>
+{:else}
+	<Button.Root
+		{...restProps}
+		{onclick}
+		class="inline-flex cursor-pointer flex-nowrap items-center justify-center rounded-full align-middle font-medium outline-offset-4 transition-colors {styles[
+			variant
+		]}
+	{sizes[size]} {style}"
+	>
+		{@render children()}
+	</Button.Root>
+{/if}

@@ -1,0 +1,22 @@
+import { Canvas, Meta, Controls } from '@storybook/addon-docs/blocks';
+
+import * as LabelStories from '../stories/Label.stories.svelte';
+
+<Meta of={LabelStories} />
+
+# Label
+
+Used in conjunction with other atomic form components.
+
+<Canvas of={LabelStories.Normal} />
+
+<Controls />
+
+## Usage Guidelines
+
+### When to use
+- Use to provide a text description for form elements like inputs, checkboxes, and toggles.
+
+### Best practices
+- Labels should be concise and clearly describe the associated input.
+- For accessibility, ensure the label is programmatically linked to its input (handled automatically in our composite components).

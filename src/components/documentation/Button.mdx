@@ -1,0 +1,54 @@
+import { Canvas, Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+
+import * as ButtonStories from '../stories/Button.stories.svelte';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+A button is a trigger for an action. It contains four variants: Normal, Ghost, Outline, and Destructive.  
+Gadabout's button is designed to look flat and modern, without sacrificing visual fidelity and usability.
+
+<Primary />
+<Controls />
+
+## Variants
+
+### Normal
+
+The lack of hover feedback is deliberate. The subtle click effect is designed to invoke predictability and reduce cognitive load for the user.
+
+<Canvas of={ButtonStories.Normal} />
+
+### Ghost
+
+Ghost buttons can be overlaid on high tonal elements such as images and solid backgrounds. A ghost button is also used for secondary actions like "Learn More" or "Cancel."
+
+> Note:  
+> **Use with caution as this tends to fail accessibility tests due to the lack of a solid infill or outline.**
+
+<Canvas of={ButtonStories.Ghost} />
+
+### Outline
+
+Outline buttons exist primarily to provide a medium-emphasis action that separates them from high-emphasis filled buttons and low-emphasis text links.
+
+<Canvas of={ButtonStories.Outline} />
+
+### Destructive
+
+<Canvas of={ButtonStories.Destructive} />
+
+## Usage Guidelines
+
+### When to use
+- Use a button to trigger an immediate action, such as submitting a form, opening a modal, or confirming a selection.
+- Use the `normal` variant for the primary action on a page or in a component.
+
+### When not to use
+- Do not use a button for navigation to a different page; use a Link instead (unless it is styled as a button).
+- Avoid using too many high-emphasis (normal) buttons on a single screen.
+
+### Best practices
+- Keep button labels concise and action-oriented (e.g., "Save", "Delete", "Send").
+- Ensure the button's variant reflects the priority and nature of the action.

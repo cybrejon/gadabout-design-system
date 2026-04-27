@@ -1,0 +1,49 @@
+import { Canvas, Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+
+import * as InputStories from '../stories/Input.stories.svelte';
+
+<Meta of={InputStories} />
+
+# Input
+
+The Input component allows users to enter and edit text or numeric data. It is typically used within forms to collect information such as names, email addresses, or passwords. Unlike Textareas, Input components are designed for single-line entries.  
+This component has four variants: Normal, Label, Icon, and Combined Labels.  
+Component construction is unconventional and tailor-built for the Gadabout.ai Design System.
+
+> Note:  
+> **Supposedly an atom, this was moved into being a molecule due to the composition of markup. This combines the bits-ui input component with the in-house Label component, which itself is based off of bits-ui's Label component. This decision is purely semantics.**
+
+<Primary />
+<Controls />
+
+## Variants
+
+### Normal
+
+<Canvas of={InputStories.Normal} />
+
+### Label
+
+<Canvas of={InputStories.Label} />
+
+### With Icon
+
+<Canvas of={InputStories.Icon} />
+
+### Combined Labels
+
+<Canvas of={InputStories.CombinedLabels} />
+
+## Usage Guidelines
+
+### When to use
+- Use for capturing short, single-line text data like names, email addresses, or search terms.
+
+### When not to use
+- Do not use for long-form text (use a TextArea instead).
+- Avoid using for simple on/off choices (use a Toggle or Checkbox).
+
+### Best practices
+- Always include a label for accessibility.
+- Use the `placeholder` prop to provide a hint about the expected format, but do not use it as a replacement for a label.
+- Use the appropriate `type` (e.g., `email`, `password`) to enable browser-specific features and validations.

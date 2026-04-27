@@ -1,0 +1,45 @@
+<script lang="ts">
+	import { Progress, useId } from 'bits-ui';
+	import type { ComponentProps } from 'svelte';
+
+	type Size = 'normal' | 'sm';
+
+	let {
+		max = 100,
+		value = 0,
+		min = 0,
+		label,
+		valueLabel,
+		size = 'normal'
+	}: ComponentProps<typeof Progress.Root> & {
+		label?: string;
+		valueLabel?: string;
+		size?: Size;
+	} = $props();
+
+	const labelId = useId();
+</script>
+
+<div class="flex w-full flex-col gap-2">
+	{#if label}
+		<div class="flex items-center justify-between text-sm font-medium">
+			<span id={labelId}> {label} </span>
+			<span>{valueLabel}</span>
+		</div>
+	{/if}
+	<Progress.Root
+		class="shadow-mini-inset relative {size === 'normal'
+			? 'h-3.75'
+			: 'h-2.5'} w-full overflow-hidden rounded-full bg-primary/10 ring-1 ring-primary/20"
+		aria-labelledby={labelId}
+		aria-valuetext={valueLabel}
+		{value}
+		{min}
+		{max}
+	>
+		<div
+			class="shadow-mini-inset h-full w-full flex-1 rounded-full bg-primary"
+			style={`transform: translateX(-${100 - (100 * (value ?? 0)) / 100}%)`}
+		></div>
+	</Progress.Root>
+</div>

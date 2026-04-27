@@ -1,0 +1,46 @@
+import { Canvas, Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+
+import * as CheckboxStories from '../stories/Checkbox.stories.svelte';
+
+<Meta of={CheckboxStories} />
+
+# Checkbox
+
+A checkbox is an interactive control that allows users to select one or more options from a list, or toggle a single binary setting (on/off). Unlike radio buttons, checkboxes support multiple independent selections within a group.  
+This component contains two variants: Normal and Indeterminate.
+
+## Variants
+
+### Normal
+
+<Canvas of={CheckboxStories.Normal} />
+
+### Indeterminate
+
+Partially filled or dashed box; used programmatically for parent checkboxes in hierarchical lists.
+
+> Note:  
+> **Avoid using this variant to indicate loading, error, disabled, or neutral states**
+
+<Canvas of={CheckboxStories.Indeterminate} />
+
+## Controls
+
+Please view a variant story to see all available controls.
+
+> TODO:  
+> Cherry-pick primitives/attributes via Storybook's [MDX parameter settings](https://github.com/storybookjs/storybook/blob/b3d09327/docs/api/doc-blocks/doc-block-controls.mdx?plain=1#L43-L65).
+
+## Usage Guidelines
+
+### When to use
+- Use when users need to select one or more independent options from a list.
+- Use for a single "accept terms" or "remember me" choice.
+
+### When not to use
+- Do not use when only one option can be selected from a group (use Radio buttons).
+- Do not use for settings that take effect immediately without a "Submit" or "Save" action (use a Toggle instead).
+
+### Best practices
+- Always provide a clear and descriptive label.
+- Group related checkboxes together with a logical heading.

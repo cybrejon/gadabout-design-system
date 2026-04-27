@@ -1,0 +1,59 @@
+import { Canvas, Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+
+import * as PillStories from '../stories/Pill.stories.svelte';
+
+<Meta of={PillStories} />
+
+# Pill (or "Chips")
+
+Pills are commonly used for tags, statuses, filters, and selectable options, and can function as either static labels or interactive elements. They provide a lightweight way to group, highlight, or categorize content without adding visual complexity.  
+It contains four variants: Normal, Ghost, Outline, and Destructive.
+
+> Note:
+> **Passing an `href` will turn the pill into a link button. In this mode, the same visual feedback can be observed with Gadabaout's Button component.**
+
+<Primary />
+<Controls />
+
+## Variants
+
+### Normal
+
+It is used for standard tags, statuses, or selections where the pill should be clearly visible against the surrounding interface.
+
+<Canvas of={PillStories.Normal} />
+
+### Ghost
+
+The ghost pill is a low-emphasis variant with minimal visual styling, relying primarily on text color and subtle interaction feedback. It is used when contextual information or actions need to remain lightweight and unobtrusive within the interface. This variant can serve a similar role as a Ghost button.
+
+> Note:
+> **Use with caution as this tends to fail accessibility tests due to the lack of a solid infill or outline.**
+
+<Canvas of={PillStories.Ghost} />
+
+### Outline
+
+The outline pill uses a transparent background with a visible border to create emphasis without the visual weight of a filled style. It is useful for secondary tags, filters, or options that require definition while maintaining a lighter appearance.
+
+<Canvas of={PillStories.Outline} />
+
+### Destructive
+
+The destructive pill uses visual cues associated with danger or removal, typically through high-contrast warning colors. It is used to indicate destructive states or actions, such as removal, deletion, or invalid status, helping draw attention to potentially irreversible interactions.
+
+<Canvas of={PillStories.Destructive} />
+
+## Usage Guidelines
+
+### When to use
+- Use for tags, categories, or statuses.
+- Use as lightweight filters that can be toggled.
+
+### When not to use
+- Do not use as the primary call-to-action on a page.
+- Avoid using for complex interactions that require more visual weight.
+
+### Best practices
+- Keep pill text short (1-2 words).
+- Use color variants consistently to represent different types of information (e.g., `destructive` for errors or alerts).
