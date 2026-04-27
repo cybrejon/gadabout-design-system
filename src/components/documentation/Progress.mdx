@@ -1,0 +1,28 @@
+import { Canvas, Meta, Controls } from '@storybook/addon-docs/blocks';
+
+import * as ProgressStories from '../stories/Progress.stories.svelte';
+
+<Meta of={ProgressStories} />
+
+# Progress
+
+The Progress component is a visual indicator that communicates the status of an ongoing process, such as a file upload, data processing, or a multi-step form completion. It helps users understand that an action is being performed and provides an estimate of how much work remains.
+
+<Canvas of={ProgressStories.Main} />
+
+<Controls />
+
+## Usage Guidelines
+
+### When to use
+- Use to show the status of a long-running task (e.g., uploading, downloading, or processing data).
+- Use to indicate progress through a multi-step workflow.
+
+### When not to use
+- Do not use for tasks with an unknown duration (use a Spinner or indeterminate Progress bar instead, though this component currently expects a value).
+- Avoid using for very short tasks (less than a second) where the sudden appearance of a progress bar might be jarring.
+
+### Best practices
+- Always provide a label or context so users know what process is being tracked.
+- Use the `valueLabel` prop to provide a human-readable representation of the progress (e.g., "75%" or "3 of 5").
+- Ensure the color and size of the progress bar are consistent with the surrounding interface.
