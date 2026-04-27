@@ -25,17 +25,17 @@
 		{#snippet children({ checked, indeterminate })}
 			{#if indeterminate}
 				<div class="flex h-5 w-5 items-center justify-center rounded-md bg-primary p-1">
-					<span class="text-xl text-primary-foreground icon-[lucide--minus]"></span>
+					<span class="icon-[lucide--minus] text-xl text-primary-foreground"></span>
 				</div>
 			{:else if checked}
 				<div class="flex h-5 w-5 items-center justify-center rounded-md bg-primary p-1">
-					<span class="text-xl text-primary-foreground icon-[lucide--check]"></span>
+					<span class="icon-[lucide--check] text-xl text-primary-foreground"></span>
 				</div>
 			{:else}
 				<div
 					class="flex h-5 w-5 items-center justify-center rounded-md p-1 inset-ring-2 group-hover:text-secondary"
 				>
-					<span class="text-xl text-primary-foreground opacity-0 icon-[lucide--check]"></span>
+					<span class="icon-[lucide--check] text-xl text-primary-foreground opacity-0"></span>
 				</div>
 			{/if}
 		{/snippet}
