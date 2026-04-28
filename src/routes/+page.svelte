@@ -1,4 +1,5 @@
 <script>
+	import Breadcrumb from '../components/atoms/Breadcrumb.svelte';
 	import Button from '../components/atoms/Button.svelte';
 	import Checkbox from '../components/atoms/Checkbox.svelte';
 	import Container from '../components/atoms/Container.svelte';
@@ -12,6 +13,23 @@
 <Container>
 	<Button>Test</Button>
 	<Checkbox labelText="Checkbox" />
-	<Pill>Test</Pill>
+	<Pill class="bg-purple-500"><span class="icon-[lucide--check]"></span><span>Success!</span></Pill>
 	<Progress label="Loading..." valueLabel="90%" value={90} />
+	<Breadcrumb
+		items={[
+			{
+				name: 'Home',
+				link: '/'
+			},
+			{
+				name: '[Leads] Opal Camidge Way',
+				link: '/'
+			},
+			{
+				name: 'Reports',
+				link: '/',
+				active: true
+			}
+		]}
+	/>
 </Container>
