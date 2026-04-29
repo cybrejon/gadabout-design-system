@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
+	import Label from '../atoms/Label.svelte';
 
 	interface Props {
 		icon?: Snippet;
@@ -15,7 +16,9 @@
 		{#if icon}
 			{@render icon()}
 		{/if}
-		<p class="mt-0.5 font-medium">{title.toUpperCase()}</p>
+		<Label class="mt-0.5 text-xxs font-medium">
+			{title.toUpperCase()}
+		</Label>
 	</div>
 	<p class="text-xs">{text}</p>
 </div>
