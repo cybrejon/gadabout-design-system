@@ -1,0 +1,33 @@
+import { Canvas, Meta, Controls, Primary } from '@storybook/addon-docs/blocks';
+
+import * as TooltipStories from '../stories/Tooltip.stories.svelte';
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+A Tooltip is a small popover that appears when a user hovers over or focuses on an element. It provides brief, supplementary information about the element's function or data, helping to clarify its purpose without cluttering the main interface.
+
+> Note:  
+> **The Tooltip component requires a `Tooltip.Provider` to be present higher up in the component tree (ideally in your root `+layout.svelte`). Without it, the Tooltip will not function correctly. For more information, refer to the [bits-ui Tooltip documentation](https://www.bits-ui.com/docs/components/tooltip). It's usage below is for demo purposes only.**
+
+<Canvas of={TooltipStories.Normal} />
+
+## Usage Guidelines
+
+### When to use
+- Use to provide short, helpful descriptions for icon-only buttons or ambiguous UI elements.
+- Use to show full text for truncated content.
+- Use to provide additional context for data points or specific terms.
+
+### When not to use
+- Do not use for essential information that the user needs to see at all times.
+- Do not use for interactive content (like links or buttons) within the tooltip itself.
+- Avoid using on mobile devices as hover states are not reliable; consider alternative ways to display the information.
+
+### Best practices
+- Keep tooltip text concise and direct (ideally a few words or a short sentence).
+- Ensure the tooltip does not obscure important information or primary actions.
+- Use appropriate delay durations to prevent tooltips from popping up too quickly and becoming distracting.
+
+<Controls />
