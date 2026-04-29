@@ -4,6 +4,18 @@ import '../src/routes/layout.css';
 const preview: Preview = {
 	tags: ['autodocs'],
 	parameters: {
+		options: {
+			storySort: {
+				method: 'alphabetical',
+				order: [
+					'Welcome',
+					'Atoms',
+					['Forms', 'Navigation', 'Layout'],
+					'Molecules',
+					['Forms', 'Navigation', 'Layout']
+				]
+			}
+		},
 		controls: {
 			matchers: {
 				color: /(background|color)$/i,
