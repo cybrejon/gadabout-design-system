@@ -1,3 +1,5 @@
+<!-- full disclosure: the entire radiogroup component codebase and documentation contains ai assisted work -->
+
 <script lang="ts">
 	import { RadioGroup, Label, type WithoutChildrenOrChild, useId } from 'bits-ui';
 
@@ -31,7 +33,7 @@
 >
 	{#each items as item, i (i)}
 		{@const id = useId()}
-		<div class="group flex items-center gap-3">
+		<div class="group flex items-center gap-2">
 			<RadioGroup.Item
 				{id}
 				value={item.value}
