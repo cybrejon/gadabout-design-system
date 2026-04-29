@@ -1,0 +1,42 @@
+import { Canvas, Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+
+import * as InfoChipStories from '../stories/InfoChip.stories.svelte';
+
+<Meta of={InfoChipStories} />
+
+# Information Chip
+
+The Information Chip is a small, focused data display component used to highlight specific attributes, categories, or metrics within a view. It typically consists of a label (title), a primary text value, and an optional icon, providing context in a compact, bordered container.
+
+> Note:  
+> **The `title` label is automatically converted to all-caps to maintain visual consistency and hierarchy across the design system.**
+
+<Primary />
+<Controls />
+
+## Variants
+
+### Main
+
+<Canvas of={InfoChipStories.Main} />
+
+### Icon
+
+<Canvas of={InfoChipStories.Icon} />
+
+## Usage Guidelines
+
+### When to use
+- Use to display key-value pairs where the "key" (title) needs to be distinct but secondary to the "value" (text).
+- Use within cards or dashboards to show quick metadata (e.g., "Status: Active", "Priority: High").
+- Use when you need to group related information in a visually bounded space.
+
+### When not to use
+- Do not use for long descriptions or paragraphs of text.
+- Do not use as a primary navigation element; use Buttons or Links instead.
+- Avoid using if the information is too complex to be summarized in a title and short text.
+
+### Best practices
+- Use clear and concise labels for the title.
+- Pair with an icon when it helps to quickly identify the type of information being presented.
+- Arrange multiple InfoChips in a grid or flex container to create a dashboard-like overview of information.
