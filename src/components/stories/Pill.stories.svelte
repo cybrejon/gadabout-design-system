@@ -52,3 +52,11 @@
 >
 	Pill (or "Chip")
 </Story>
+
+<Story name="CustomColor" asChild>
+	<div class="flex items-center gap-2">
+		<Pill class="bg-yellow-500">Yellow</Pill>
+		<Pill class="bg-purple-500">Purple</Pill>
+		<Pill class="bg-blue-500">Blue</Pill>
+	</div>
+</Story>

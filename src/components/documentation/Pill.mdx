@@ -4,7 +4,7 @@ import * as PillStories from '../stories/Pill.stories.svelte';
 
 <Meta of={PillStories} />
 
-# Pill (or "Chips")
+# Pill (or "Chips/Badge")
 
 Pills are commonly used for tags, statuses, filters, and selectable options, and can function as either static labels or interactive elements. They provide a lightweight way to group, highlight, or categorize content without adding visual complexity.  
 It contains four variants: Normal, Ghost, Outline, and Destructive.
@@ -44,16 +44,25 @@ The destructive pill uses visual cues associated with danger or removal, typical
 
 <Canvas of={PillStories.Destructive} />
 
+### Custom Color (Experimental)
+
+Not all colors work. Use sparringly.
+
+<Canvas of={PillStories.CustomColor} />
+
 ## Usage Guidelines
 
 ### When to use
+
 - Use for tags, categories, or statuses.
 - Use as lightweight filters that can be toggled.
 
 ### When not to use
+
 - Do not use as the primary call-to-action on a page.
 - Avoid using for complex interactions that require more visual weight.
 
 ### Best practices
+
 - Keep pill text short (1-2 words).
 - Use color variants consistently to represent different types of information (e.g., `destructive` for errors or alerts).

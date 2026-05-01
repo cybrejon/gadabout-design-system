@@ -1,0 +1,29 @@
+import { Canvas, Meta, Controls } from '@storybook/addon-docs/blocks';
+
+import * as BreadcrumStories from '../stories/Breadcrumb.stories.svelte';
+
+<Meta of={BreadcrumStories} />
+
+# Breadcrumb
+
+An accessible navigation component that visually displays the user's current location within a site or application's hierarchy. The breadcrumb component renders a clickable path from the root or homepage to the current page, helping users understand context and quickly backtrack to parent sections.
+
+<Canvas of={BreadcrumStories.Main} />
+
+<Controls />
+
+## Usage Guidelines
+
+### When to use
+- Use to show the user's current location within a deep site hierarchy.
+- Use when you want to provide a quick way for users to navigate back to parent pages or the root level.
+
+### When not to use
+- Do not use for primary navigation with only a few top-level pages.
+- Avoid using on very shallow interfaces/websites (1-2 levels deep).
+- Do not use as a replacement for a progress indicator in a multi-step form (use the Progress component instead).
+
+### Best practices
+- Keep item names consistent with the page titles they link to.
+- Limit the number of breadcrumb levels to prevent wrapping and visual clutter on smaller screens.
+- Ensure the current page is clearly identified (usually as the last item in the list).

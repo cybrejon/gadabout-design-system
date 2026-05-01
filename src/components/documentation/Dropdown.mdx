@@ -1,0 +1,31 @@
+import { Canvas, Meta, Controls } from '@storybook/addon-docs/blocks';
+
+import * as DropdownStories from '../stories/Dropdown.stories.svelte';
+
+<Meta of={DropdownStories} />
+
+# Dropdown Menu
+
+The Dropdown Menu component provides a toggleable list of actions or links, typically triggered by a button. It is a space-saving navigation element that hides options until they are needed, keeping the interface clean and focused. Built with accessibility in mind, it supports keyboard navigation and screen readers.
+
+<Canvas of={DropdownStories.Main} />
+
+<Controls />
+
+## Usage Guidelines
+
+### When to use
+- Use when you have a list of actions (like "Settings", "Profile", "Logout") that don't need to be visible all the time.
+- Use for secondary actions that would otherwise clutter the main navigation or header.
+- Use when space is limited, such as on mobile devices or in dense information panels.
+
+### When not to use
+- Do not use for a single action; use a Button instead.
+- Do not use for critical path actions that users need to see and access immediately.
+- Do not use as a replacement for a "Select" input in forms where the user is choosing an option for a field.
+
+### Best practices
+- Label the trigger button clearly so users know what to expect when they open the menu.
+- Keep the number of items in the menu manageable (usually 3-7 items).
+- Group related actions together within the menu.
+- Use concise and action-oriented labels for the menu items.

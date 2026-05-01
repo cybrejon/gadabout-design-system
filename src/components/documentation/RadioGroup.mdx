@@ -1,0 +1,42 @@
+import { Canvas, Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+
+import * as RadioGroupStories from '../stories/RadioGroup.stories.svelte';
+
+<Meta of={RadioGroupStories} />
+
+# Radio Group
+
+A radio group is a set of checkable buttons, known as radio buttons, where no more than one button can be checked at a time.  
+This component supports both vertical and horizontal orientations and has two variants.
+
+## Variants
+
+### Vertical
+
+<Canvas of={RadioGroupStories.Vertical} />
+
+### Horizontal
+
+<Canvas of={RadioGroupStories.Horizontal} />
+
+## Usage Guidelines
+
+### When to use
+
+- Use when users need to select exactly one option from a list of mutually exclusive choices.
+- Use for a small number of options (usually 2-5). For more options, consider a Dropdown.
+
+### When not to use
+
+- Do not use when multiple options can be selected (use Checkboxes).
+- Do not use for settings that take effect immediately (use a Toggle).
+
+### Best practices
+
+- Always provide a clear and descriptive label for each radio button.
+- Ensure the most likely option is selected by default.
+- Group related radio buttons together with a logical heading.
+
+## Controls
+
+<Controls />

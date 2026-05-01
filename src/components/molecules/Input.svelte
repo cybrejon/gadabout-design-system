@@ -15,7 +15,7 @@
 		icon,
 		type = 'text'
 	}: Props = $props();
-	import Label from './Label.svelte';
+	import Label from '../atoms/Label.svelte';
 </script>
 
 <div class="flex flex-col gap-1">
