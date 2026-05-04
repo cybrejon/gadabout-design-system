@@ -1,6 +1,6 @@
 <script module>
 	import { defineMeta } from '@storybook/addon-svelte-csf';
-	import RadioGroup from '../atoms/RadioGroup.svelte';
+	import RadioGroup from './RadioGroup.svelte';
 	import ContainerDecorator from '../utils/ContainerDecorator.svelte';
 
 	const items = [

@@ -1,12 +1,12 @@
 <script module>
 	import { defineMeta } from '@storybook/addon-svelte-csf';
 
-	import Toggle from '../atoms/Toggle.svelte';
+	import InfoChip from './InfoChip.svelte';
 	import ContainerDecorator from '../utils/ContainerDecorator.svelte';
 
 	const { Story } = defineMeta({
-		title: 'Component/Atoms/Forms/Toggle',
-		component: Toggle,
+		title: 'Component/Molecules/Cards/InfoChip',
+		component: InfoChip,
 		tags: ['autodocs'],
 		// @ts-expect-error: seems to be a bug => https://github.com/storybookjs/storybook/issues/29951
 		decorators: [() => ContainerDecorator]
@@ -14,8 +14,16 @@
 </script>
 
 <Story
-	name="Normal"
+	name="Main"
 	args={{
 		primary: true
-	}}><span class="icon-[lucide--lock-keyhole-open]"></span></Story
->
+	}}
+/>
+
+<Story name="Icon" asChild>
+	<InfoChip>
+		{#snippet icon()}
+			<span class="icon-[lucide--focus]"></span>
+		{/snippet}
+	</InfoChip>
+</Story>
