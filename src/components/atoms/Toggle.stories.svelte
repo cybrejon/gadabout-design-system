@@ -1,12 +1,12 @@
 <script module>
 	import { defineMeta } from '@storybook/addon-svelte-csf';
 
-	import Breadcrumb from '../molecules/Breadcrumb.svelte';
+	import Toggle from './Toggle.svelte';
 	import ContainerDecorator from '../utils/ContainerDecorator.svelte';
 
 	const { Story } = defineMeta({
-		title: 'Component/Molecules/Navigation/Breadcrumb',
-		component: Breadcrumb,
+		title: 'Component/Atoms/Forms/Toggle',
+		component: Toggle,
 		tags: ['autodocs'],
 		// @ts-expect-error: seems to be a bug => https://github.com/storybookjs/storybook/issues/29951
 		decorators: [() => ContainerDecorator]
@@ -14,22 +14,8 @@
 </script>
 
 <Story
-	name="Main"
+	name="Normal"
 	args={{
-		items: [
-			{
-				name: 'Home',
-				link: '/'
-			},
-			{
-				name: '[Leads] Opal Camidge Way',
-				link: '/'
-			},
-			{
-				name: 'Reports',
-				link: '/',
-				active: true
-			}
-		]
-	}}
-/>
+		primary: true
+	}}><span class="icon-[lucide--lock-keyhole-open]"></span></Story
+>

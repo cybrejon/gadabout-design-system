@@ -1,7 +1,7 @@
 <script module>
 	import { defineMeta } from '@storybook/addon-svelte-csf';
 
-	import Dropdown from '../molecules/Dropdown.svelte';
+	import Dropdown from './Dropdown.svelte';
 	import ContainerDecorator from '../utils/ContainerDecorator.svelte';
 
 	const { Story } = defineMeta({

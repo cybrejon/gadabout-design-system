@@ -1,7 +1,7 @@
 <script module>
 	import { defineMeta } from '@storybook/addon-svelte-csf';
 
-	import Pill from '../atoms/Pill.svelte';
+	import Pill from './Pill.svelte';
 	import ContainerDecorator from '../utils/ContainerDecorator.svelte';
 
 	const { Story } = defineMeta({

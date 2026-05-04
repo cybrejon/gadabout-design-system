@@ -1,8 +1,8 @@
 <script module>
 	import { defineMeta } from '@storybook/addon-svelte-csf';
 
-	import MyTooltip from '../atoms/Tooltip.svelte';
-	import Button from '../atoms/Button.svelte';
+	import MyTooltip from './Tooltip.svelte';
+	import Button from './Button.svelte';
 	import { Tooltip } from 'bits-ui';
 	import ContainerDecorator from '../utils/ContainerDecorator.svelte';
 
