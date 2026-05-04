@@ -51,3 +51,11 @@
 		label_bottom: 'Bottom label'
 	}}
 />
+
+<Story
+	name="Invalid"
+	args={{
+		invalid: true,
+		placeholder: 'invalid value'
+	}}
+/>
