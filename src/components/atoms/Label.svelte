@@ -4,10 +4,14 @@
 	interface Props {
 		children: Snippet;
 		class?: string;
+		for?: string;
 	}
-	let { children, class: className }: Props = $props();
+	let { children, class: className, for: for_attribute }: Props = $props();
 </script>
 
-<Label.Root class="text-xs font-semibold tracking-wide text-foreground-alt {className}">
+<Label.Root
+	for={for_attribute}
+	class="text-xs font-semibold tracking-wide text-foreground-alt {className}"
+>
 	{@render children()}
 </Label.Root>
