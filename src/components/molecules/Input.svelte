@@ -35,7 +35,7 @@
 	<div>
 		<div class="relative">
 			{#if icon}
-				<span class="absolute top-3.75 left-4 {icon} pointer-events-none"></span>
+				<span class="absolute top-3.75 left-4 {icon} pointer-events-none text-foreground/50"></span>
 			{/if}
 			<input
 				{id}
