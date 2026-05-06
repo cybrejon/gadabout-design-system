@@ -1,0 +1,49 @@
+import { Canvas, Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+
+import * as TextAreaStories from './TextArea.stories.svelte';
+
+<Meta of={TextAreaStories} />
+
+# TextArea
+
+The TextArea component allows users to enter and edit multi-line text data. It is typically used for long-form entries such as comments, descriptions, or feedback.  
+This component has four variants: Normal, Label, Combined Labels, and Invalid.  
+Component construction is unconventional and tailor-built for the Gadabout.ai Design System.
+
+<Primary />
+<Controls />
+
+## Variants
+
+### Normal
+
+<Canvas of={TextAreaStories.Normal} />
+
+### Label
+
+<Canvas of={TextAreaStories.Label} />
+
+### Combined Labels
+
+<Canvas of={TextAreaStories.CombinedLabels} />
+
+### Invalid
+
+<Canvas of={TextAreaStories.Invalid} />
+
+## Usage Guidelines
+
+### When to use
+
+- Use for capturing multi-line text data like descriptions, comments, or messages.
+
+### When not to use
+
+- Do not use for short, single-line text (use an Input instead).
+- Avoid using for simple on/off choices (use a Toggle or Checkbox).
+
+### Best practices
+
+- Always include a label for accessibility.
+- Use the `placeholder` prop to provide a hint about the expected content.
+- Adjust the `rows` and `cols` props to provide an appropriate initial size for the expected input length.
