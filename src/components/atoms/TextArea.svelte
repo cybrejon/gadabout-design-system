@@ -14,6 +14,7 @@
 		size?: TextAreaSize;
 		label?: string;
 		label_bottom?: string;
+		class?: string;
 	}
 
 	let {
@@ -23,11 +24,12 @@
 		size = { rows: 5, cols: 53 },
 		label = 'Label',
 		label_bottom = '',
-		placeholder = 'Placeholder'
+		placeholder = 'Placeholder',
+		class: className
 	}: Props = $props();
 </script>
 
-<div class="flex flex-col gap-2">
+<div class="flex flex-col gap-1">
 	{#if label}
 		<Label for={name}>{label}</Label>
 	{/if}
@@ -36,7 +38,7 @@
 		<textarea
 			{placeholder}
 			form={id}
-			class="rounded-xl border border-2 bg-card p-3 text-sm text-foreground outline-3 outline-offset-0 outline-transparent placeholder:text-foreground-alt focus-visible:border-primary/50 focus-visible:ring-transparent focus-visible:outline-primary/10"
+			class="rounded-xl border border-2 bg-card p-3 text-sm text-foreground outline-3 outline-offset-0 outline-transparent placeholder:text-foreground-alt focus-visible:border-primary/50 focus-visible:ring-transparent focus-visible:outline-primary/10 {className}"
 			{id}
 			{name}
 			rows={size.rows}
