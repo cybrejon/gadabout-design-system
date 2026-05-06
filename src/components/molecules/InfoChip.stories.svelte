@@ -13,12 +13,7 @@
 	});
 </script>
 
-<Story
-	name="Main"
-	args={{
-		primary: true
-	}}
-/>
+<Story name="Main" />
 
 <Story name="Icon" asChild>
 	<InfoChip>

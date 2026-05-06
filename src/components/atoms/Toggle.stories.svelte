@@ -13,9 +13,4 @@
 	});
 </script>
 
-<Story
-	name="Normal"
-	args={{
-		primary: true
-	}}><span class="icon-[lucide--lock-keyhole-open]"></span></Story
->
+<Story name="Normal"><span class="icon-[lucide--lock-keyhole-open]"></span></Story>
