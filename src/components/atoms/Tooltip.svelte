@@ -1,16 +1,6 @@
-<script lang="ts">
+<script>
 	import { Tooltip } from 'bits-ui';
-	import { type Snippet } from 'svelte';
 	import { fly } from 'svelte/transition';
-
-	type DelayDurations = 200 | 400 | 700;
-
-	type Props = Tooltip.RootProps & {
-		trigger: Snippet;
-		delayDuration?: DelayDurations;
-		triggerProps?: Tooltip.TriggerProps;
-		class?: string;
-	};
 
 	let {
 		open = $bindable(false),
@@ -20,7 +10,7 @@
 		triggerProps = {},
 		class: className,
 		...restProps
-	}: Props = $props();
+	} = $props();
 </script>
 
 <!--

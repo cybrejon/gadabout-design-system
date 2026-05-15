@@ -1,12 +1,6 @@
-<script lang="ts">
+<script>
 	import { Label } from 'bits-ui';
-	import type { Snippet } from 'svelte';
-	interface Props {
-		children: Snippet;
-		class?: string;
-		for?: string;
-	}
-	let { children, class: className = '', for: for_attribute }: Props = $props();
+	let { children, class: className = '', for: for_attribute } = $props();
 </script>
 
 <Label.Root

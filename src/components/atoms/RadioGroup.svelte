@@ -1,18 +1,7 @@
 <!-- full disclosure: the entire radiogroup component codebase and documentation contains ai assisted work -->
 
-<script lang="ts">
-	import { RadioGroup, Label, type WithoutChildrenOrChild, useId } from 'bits-ui';
-
-	type Item = {
-		value: string;
-		label: string;
-		disabled?: boolean;
-	};
-
-	type Props = WithoutChildrenOrChild<RadioGroup.RootProps> & {
-		items: Item[];
-		class?: string;
-	};
+<script>
+	import { RadioGroup, Label, useId } from 'bits-ui';
 
 	let {
 		value = $bindable(''),
@@ -21,7 +10,7 @@
 		orientation = 'vertical',
 		class: className,
 		...restProps
-	}: Props = $props();
+	} = $props();
 </script>
 
 <RadioGroup.Root

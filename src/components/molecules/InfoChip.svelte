@@ -1,14 +1,7 @@
-<script lang="ts">
-	import type { Snippet } from 'svelte';
+<script>
 	import Label from '../atoms/Label.svelte';
 
-	interface Props {
-		icon?: Snippet;
-		title?: string;
-		text?: string;
-	}
-
-	let { icon, title = 'PRIMARY FOCUS', text = 'Technical Compliance' }: Props = $props();
+	let { icon, title = 'PRIMARY FOCUS', text = 'Technical Compliance' } = $props();
 </script>
 
 <div class="flex min-w-40 flex-col gap-1 rounded-lg p-2 ring ring-border">

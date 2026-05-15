@@ -1,7 +1,7 @@
-import type { Preview } from '@storybook/sveltekit';
 import '../src/routes/layout.css';
 
-const preview: Preview = {
+/** @type { import('@storybook/sveltekit').Preview } */
+const preview = {
 	tags: ['autodocs'],
 	parameters: {
 		options: {

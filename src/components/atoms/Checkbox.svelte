@@ -1,5 +1,5 @@
-<script lang="ts">
-	import { Checkbox, Label, useId, type WithoutChildrenOrChild } from 'bits-ui';
+<script>
+	import { Checkbox, Label, useId } from 'bits-ui';
 
 	let {
 		id = useId(),
@@ -8,9 +8,6 @@
 		labelRef = $bindable(null),
 		labelText,
 		...restProps
-	}: WithoutChildrenOrChild<Checkbox.RootProps> & {
-		labelText: string;
-		labelRef?: HTMLLabelElement | null;
 	} = $props();
 </script>
 

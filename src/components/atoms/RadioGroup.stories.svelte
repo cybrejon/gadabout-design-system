@@ -14,7 +14,6 @@
 		title: 'Component/Atoms/Forms/RadioGroup',
 		component: RadioGroup,
 		tags: ['autodocs'],
-		// @ts-expect-error: seems to be a bug => https://github.com/storybookjs/storybook/issues/29951
 		decorators: [() => ContainerDecorator]
 	});
 </script>
