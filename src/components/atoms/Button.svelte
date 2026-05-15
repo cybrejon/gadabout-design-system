@@ -1,27 +1,6 @@
-<script lang="ts" module>
-	export type ButtonVariants =
-		| 'normal'
-		| 'ghost'
-		| 'outline'
-		| 'text'
-		| 'destructive'
-		| 'outline alt';
-	export type ButtonSizes = 'normal' | 'sm' | 'text' | 'text md' | 'text sm' | 'sidebar';
-</script>
-
-<script lang="ts">
+<script>
 	import { Button } from 'bits-ui';
-	import type { MouseEventHandler } from 'svelte/elements';
-	import type { Snippet } from 'svelte';
 
-	interface Props {
-		children: Snippet;
-		variant?: ButtonVariants;
-		size?: ButtonSizes;
-		class?: string;
-		type?: string;
-		onclick?: MouseEventHandler<HTMLButtonElement>;
-	}
 	let {
 		children,
 		variant = 'normal',
@@ -30,9 +9,9 @@
 		onclick,
 		type = '',
 		...restProps
-	}: Props = $props();
+	} = $props();
 
-	let styles: Record<ButtonVariants, string> = {
+	let styles = {
 		normal: 'bg-primary text-primary-foreground active:text-primary-foreground/80',
 		destructive: 'bg-destructive text-primary-foreground active:text-primary-foreground/80',
 		ghost: 'hover:bg-primary/10 active:bg-primary/20',
@@ -43,7 +22,7 @@
 		text: 'hover:text-secondary'
 	};
 
-	let sizes: Record<ButtonSizes, string> = {
+	let sizes = {
 		normal: 'px-6 py-3 gap-3 text-base text-sm',
 		sm: 'px-4 py-2 gap-2 text-xs',
 		text: 'gap-2',

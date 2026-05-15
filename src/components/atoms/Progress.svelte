@@ -1,8 +1,5 @@
-<script lang="ts">
+<script>
 	import { Progress, useId } from 'bits-ui';
-	import type { ComponentProps } from 'svelte';
-
-	type Size = 'normal' | 'sm';
 
 	let {
 		max = 100,
@@ -10,11 +7,8 @@
 		min = 0,
 		label,
 		valueLabel,
-		size = 'normal'
-	}: ComponentProps<typeof Progress.Root> & {
-		label?: string;
-		valueLabel?: string;
-		size?: Size;
+		size = 'normal',
+		...restProps
 	} = $props();
 
 	const labelId = useId();
@@ -28,6 +22,7 @@
 		</div>
 	{/if}
 	<Progress.Root
+		{...restProps}
 		class="shadow-mini-inset relative {size === 'normal'
 			? 'h-3.75'
 			: 'h-2.5'} w-full overflow-hidden rounded-full bg-primary/10 ring-1 ring-primary/20"

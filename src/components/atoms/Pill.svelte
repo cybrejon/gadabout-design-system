@@ -1,16 +1,7 @@
-<script lang="ts">
-	type PillVariants = 'normal' | 'ghost' | 'outline alt' | 'outline' | 'destructive';
+<script>
+	let { children, variant = 'normal', class: className = '' } = $props();
 
-	import type { Snippet } from 'svelte';
-
-	interface Props {
-		children: Snippet;
-		variant?: PillVariants;
-		class?: string;
-	}
-	let { children, variant = 'normal', class: className = '' }: Props = $props();
-
-	let styles: Record<PillVariants, string> = {
+	let styles = {
 		normal: 'bg-primary text-primary-foreground active:text-primary-foreground/80',
 		destructive: 'bg-destructive text-primary-foreground active:text-primary-foreground/80',
 		ghost: 'hover:bg-primary/10 active:bg-primary/20',

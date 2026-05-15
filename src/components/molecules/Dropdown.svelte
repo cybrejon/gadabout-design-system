@@ -1,28 +1,8 @@
-<script lang="ts">
-	import { DropdownMenu, type WithoutChild } from 'bits-ui';
-	import type { Snippet } from 'svelte';
+<script>
+	import { DropdownMenu } from 'bits-ui';
 	import Button from '../atoms/Button.svelte';
 
-	interface ItemsProp {
-		name: string;
-		callback?: () => void;
-	}
-
-	type Props = DropdownMenu.RootProps & {
-		buttonText?: string;
-		items: ItemsProp[];
-		contentProps?: WithoutChild<DropdownMenu.ContentProps>;
-		icon: Snippet;
-	};
-
-	let {
-		open = $bindable(false),
-		buttonText,
-		items,
-		contentProps,
-		icon,
-		...restProps
-	}: Props = $props();
+	let { open = $bindable(false), buttonText, items, contentProps, icon, ...restProps } = $props();
 </script>
 
 <DropdownMenu.Root bind:open {...restProps}>

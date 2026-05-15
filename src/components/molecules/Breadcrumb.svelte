@@ -1,13 +1,7 @@
-<script lang="ts">
+<script>
 	import Button from '../atoms/Button.svelte';
 
-	type CrumbItem = {
-		name: string;
-		link: string;
-		active?: boolean;
-	};
-
-	let { items = [] }: { items: CrumbItem[] } = $props();
+	let { items = [] } = $props();
 </script>
 
 <div class="flex flex-nowrap items-center gap-2 rounded-full border border-[1.5px] px-3 py-1.5">

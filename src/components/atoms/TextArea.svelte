@@ -1,14 +1,5 @@
-<script lang="ts">
-	import type { HTMLTextareaAttributes } from 'svelte/elements';
+<script>
 	import Label from './Label.svelte';
-
-	interface Props extends HTMLTextareaAttributes {
-		value?: string;
-		label?: string;
-		label_bottom?: string;
-		invalid?: boolean;
-		id?: string;
-	}
 
 	let {
 		value = $bindable(''),
@@ -21,7 +12,7 @@
 		cols = 53,
 		class: className,
 		...rest
-	}: Props = $props();
+	} = $props();
 </script>
 
 <div class="flex flex-col gap-1">

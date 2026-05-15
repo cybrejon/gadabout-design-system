@@ -1,15 +1,5 @@
-<script lang="ts">
-	import type { HTMLInputAttributes } from 'svelte/elements';
+<script>
 	import Label from '../atoms/Label.svelte';
-
-	interface Props extends HTMLInputAttributes {
-		value?: string;
-		label?: string;
-		label_bottom?: string;
-		icon?: string;
-		invalid?: boolean;
-		id?: string;
-	}
 
 	let {
 		value = $bindable(''),
@@ -22,7 +12,7 @@
 		id = crypto.randomUUID(),
 		class: className,
 		...rest
-	}: Props = $props();
+	} = $props();
 </script>
 
 <div class="flex flex-col gap-1">

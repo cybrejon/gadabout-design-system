@@ -1,5 +1,5 @@
 <script>
-	import Breadcrumb from '../components/atoms/Breadcrumb.svelte';
+	import Breadcrumb from '../components/molecules/Breadcrumb.svelte';
 	import Button from '../components/atoms/Button.svelte';
 	import Checkbox from '../components/atoms/Checkbox.svelte';
 	import Container from '../components/atoms/Container.svelte';
