@@ -6,9 +6,9 @@
 		class?: string;
 	}
 
-	let { children, class: styles }: Props = $props();
+	let { children, class: className = '' }: Props = $props();
 </script>
 
-<div class="rounded-2xl border border-[1.75px] bg-card p-5 {styles}">
+<div class="rounded-2xl border border-[1.75px] bg-card p-5 {className}">
 	{@render children()}
 </div>

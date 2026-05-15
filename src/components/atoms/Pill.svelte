@@ -8,7 +8,7 @@
 		variant?: PillVariants;
 		class?: string;
 	}
-	let { children, variant = 'normal', class: className }: Props = $props();
+	let { children, variant = 'normal', class: className = '' }: Props = $props();
 
 	let styles: Record<PillVariants, string> = {
 		normal: 'bg-primary text-primary-foreground active:text-primary-foreground/80',
