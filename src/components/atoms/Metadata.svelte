@@ -1,8 +1,7 @@
-<script lang="ts">
-	import type { Snippet } from 'svelte';
+<script>
 	import Label from '../atoms/Label.svelte';
 
-	let { label, text, icon }: { label: string; text: string; icon?: Snippet } = $props();
+	let { label, text, icon } = $props();
 </script>
 
 <dl class="leading-5">

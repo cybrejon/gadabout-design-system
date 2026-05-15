@@ -1,18 +1,8 @@
-<script lang="ts">
+<script>
 	import { Toggle } from 'bits-ui';
-	import Button, { type ButtonSizes } from './Button.svelte';
-	import type { MouseEventHandler } from 'svelte/elements';
-	import type { Snippet } from 'svelte';
+	import Button from './Button.svelte';
 
-	interface Props {
-		pressed: boolean;
-		children: Snippet;
-		size?: ButtonSizes;
-		href?: string;
-		onclick?: MouseEventHandler<HTMLButtonElement>;
-	}
-
-	let { pressed = $bindable(false), children, href, onclick, size }: Props = $props();
+	let { pressed = $bindable(false), children, href, onclick, size } = $props();
 </script>
 
 <Toggle.Root

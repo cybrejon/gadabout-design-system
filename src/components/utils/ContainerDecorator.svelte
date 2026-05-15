@@ -1,7 +1,5 @@
-<script lang="ts">
-	import type { Snippet } from 'svelte';
-
-	let { children }: { children: Snippet } = $props();
+<script>
+	let { children } = $props();
 </script>
 
 <div class="flex flex-col items-center justify-center gap-12">
