@@ -6,7 +6,7 @@
 		class?: string;
 		for?: string;
 	}
-	let { children, class: className, for: for_attribute }: Props = $props();
+	let { children, class: className = '', for: for_attribute }: Props = $props();
 </script>
 
 <Label.Root
