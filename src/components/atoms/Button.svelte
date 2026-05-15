@@ -17,18 +17,18 @@
 	interface Props {
 		children: Snippet;
 		variant?: ButtonVariants;
-		href?: string;
 		size?: ButtonSizes;
 		class?: string;
+		type?: string;
 		onclick?: MouseEventHandler<HTMLButtonElement>;
 	}
 	let {
 		children,
 		variant = 'normal',
-		href,
 		size = 'normal',
 		class: style,
 		onclick,
+		type = '',
 		...restProps
 	}: Props = $props();
 
@@ -53,26 +53,14 @@
 	};
 </script>
 
-{#if href}
-	<Button.Root
-		{href}
-		{...restProps}
-		class="inline-flex cursor-pointer flex-nowrap items-center justify-center rounded-full align-middle font-medium outline-offset-4 transition-colors {styles[
-			variant
-		]}
+<Button.Root
+	{...restProps}
+	{onclick}
+	{type}
+	class="inline-flex cursor-pointer flex-nowrap items-center justify-center rounded-full align-middle font-medium outline-offset-4 transition-colors {styles[
+		variant
+	]}
 	{sizes[size]} {style}"
-	>
-		{@render children()}
-	</Button.Root>
-{:else}
-	<Button.Root
-		{...restProps}
-		{onclick}
-		class="inline-flex cursor-pointer flex-nowrap items-center justify-center rounded-full align-middle font-medium outline-offset-4 transition-colors {styles[
-			variant
-		]}
-	{sizes[size]} {style}"
-	>
-		{@render children()}
-	</Button.Root>
-{/if}
+>
+	{@render children()}
+</Button.Root>
