@@ -1,13 +1,13 @@
-import { Canvas, Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+import { Canvas, Controls, Meta, Primary } from "@storybook/addon-docs/blocks";
 
-import * as ButtonStories from './Button.stories.svelte';
+import * as ButtonStories from "./Button.stories.svelte";
 
 <Meta of={ButtonStories} />
 
 # Button
 
-A button is a trigger for an action. It contains four variants: Normal, Ghost, Outline, and Destructive.  
-Gadabout's button is designed to look flat and modern, without sacrificing visual fidelity and usability.
+A button is a trigger for an action. It contains six variants: Normal, Ghost, Outline, Outline Alternative, Destructive, and Text.
+Gadabout's button is designed to look flat, modern, and accessible, without sacrificing visual fidelity.
 
 <Primary />
 <Controls />
@@ -24,7 +24,7 @@ The lack of hover feedback is deliberate. The subtle click effect is designed to
 
 Ghost buttons can be overlaid on high tonal elements such as images and solid backgrounds. A ghost button is also used for secondary actions like "Learn More" or "Cancel."
 
-> Note:  
+> Note:
 > **Use with caution as this tends to fail accessibility tests due to the lack of a solid infill or outline.**
 
 <Canvas of={ButtonStories.Ghost} />
@@ -35,9 +35,50 @@ Outline buttons exist primarily to provide a medium-emphasis action that separat
 
 <Canvas of={ButtonStories.Outline} />
 
+### Outline Alternative
+
+A subtle variation of the outline button with a light background fill, useful for secondary actions that need a bit more visual weight than a ghost button.
+
+<Canvas of={ButtonStories.OutlineAlternative} />
+
 ### Destructive
 
+Use the destructive variant for actions that result in data loss or are otherwise irreversible.
+
 <Canvas of={ButtonStories.Destructive} />
+
+### Text
+
+The text variant is used for the lowest emphasis actions, appearing as plain text that reacts on hover.
+
+<Canvas of={ButtonStories.Text} />
+
+## Sizes
+
+### Normal
+
+The default size for buttons, suitable for most use cases.
+
+<Canvas of={ButtonStories.Normal} />
+
+### Small
+
+A more compact version for tight spaces or less prominent actions.
+
+<Canvas of={ButtonStories.Small} />
+
+### Text Sizes
+
+Variants of the text button with different font sizes and spacing.
+
+<Canvas of={ButtonStories.TextMedium} />
+<Canvas of={ButtonStories.TextSmall} />
+
+### Sidebar
+
+A full-width variant designed specifically for use in navigation sidebars.
+
+<Canvas of={ButtonStories.Sidebar} />
 
 ## Usage Guidelines
 
@@ -48,7 +89,7 @@ Outline buttons exist primarily to provide a medium-emphasis action that separat
 
 ### When not to use
 
-- Do not use a button for navigation to a different page; use a Link instead (unless it is styled as a button).
+- Do not use a standalone button for navigation to a different page; use the dedicated Sidebar variant or an anchor tag instead.
 - Avoid using too many high-emphasis (normal) buttons on a single screen.
 
 ### Best practices

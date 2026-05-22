@@ -1,17 +1,15 @@
-import { Canvas, Meta, Controls, Primary } from '@storybook/addon-docs/blocks';
+import { Canvas, Controls, Meta, Primary } from "@storybook/addon-docs/blocks";
 
-import * as ToggleStories from './Toggle.stories.svelte';
+import * as ToggleStories from "./Toggle.stories.svelte";
 
 <Meta of={ToggleStories} />
 
 # Toggle
 
-This is the atomic Toggle component.
+A toggle is a button that can be in one of two states: on or off. It is used for binary settings or preferences that take effect immediately.
+Gadabout's toggle is built on top of the Button component and maintains a consistent aesthetic while providing clear visual feedback for its active state.
 
-Normally you would bind the **pressed** prop if you need to cycle between content states or handle events. I have yet to figure out how to do this with storybook.
-
-<Canvas of={ToggleStories.Normal} />
-
+<Primary />
 <Controls />
 
 ## Usage Guidelines
