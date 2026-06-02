@@ -7,7 +7,7 @@
 
 <Toggle.Root
 	bind:pressed
-	class="inline-flex cursor-pointer flex-nowrap items-center justify-center rounded-full align-middle font-medium text-foreground/70 inset-ring-[1.45px] inset-ring-transparent outline-offset-4 transition-colors hover:inset-ring-primary/30 data-[state=on]:bg-primary/10 data-[state=on]:text-foreground"
+	class="inline-flex cursor-pointer flex-nowrap items-center justify-center rounded-full align-middle font-medium text-foreground/70 inset-ring-[1.45px] inset-ring-transparent outline-offset-4 transition-colors hover:inset-ring-current/30 data-[state=on]:bg-current/10 data-[state=on]:text-foreground"
 >
 	{#snippet child({ props })}
 		{#if size === 'text'}

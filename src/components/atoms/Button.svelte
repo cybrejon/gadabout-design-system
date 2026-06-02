@@ -17,11 +17,11 @@
 	const styles = {
 		normal: 'bg-primary text-primary-foreground active:text-primary-foreground/80',
 		destructive: 'bg-destructive text-primary-foreground active:text-primary-foreground/80',
-		ghost: 'hover:bg-primary/10 active:bg-primary/20',
+		ghost: 'text-primary hover:bg-current/10 active:bg-current/20',
 		'outline alt':
-			'hover:bg-primary/10 active:bg-primary/20 bg-primary/5 inset-ring inset-ring-primary/10',
+			'text-primary hover:bg-current/10 active:bg-current/20 bg-current/5 inset-ring inset-ring-current/10',
 		outline:
-			'hover:bg-primary/10 active:bg-primary inset-ring-[1.45px] inset-ring-primary active:text-primary-foreground',
+			'text-primary hover:bg-current/10 active:bg-current inset-ring-[1.45px] inset-ring-current active:text-primary-foreground',
 		text: 'hover:text-secondary'
 	};
 
