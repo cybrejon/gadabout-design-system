@@ -2,6 +2,21 @@
 	import { resolve } from '$app/paths';
 	import { Button } from 'bits-ui';
 
+	/**
+	 * @typedef {Object} Props
+	 * @property {import('svelte').Snippet} [children] - The button content.
+	 * @property {'normal' | 'destructive' | 'ghost' | 'outline alt' | 'outline' | 'text'} [variant] - The visual style of the button.
+	 * @property {string} [href] - An optional URL to make the button behave as a link.
+	 * @property {'normal' | 'sm' | 'text' | 'text md' | 'text sm' | 'sidebar'} [size] - The size and padding of the button.
+	 * @property {string} [class] - Additional CSS classes.
+	 * @property {import('svelte/elements').MouseEventHandler<any>} [onclick] - Click event handler.
+	 * @property {'button' | 'submit' | 'reset'} [type] - The HTML button type.
+	 * @property {boolean} [disabled] - Whether the button is disabled.
+	 * @property {import('bits-ui').ButtonProps} [restProps] - Any other props to pass to the underlying element.
+	 */
+
+	/** @type {Props} */
+
 	let {
 		children,
 		variant = 'normal',
@@ -17,11 +32,11 @@
 	const styles = {
 		normal: 'bg-primary text-primary-foreground active:text-primary-foreground/80',
 		destructive: 'bg-destructive text-primary-foreground active:text-primary-foreground/80',
-		ghost: 'text-primary hover:bg-current/10 active:bg-current/20',
+		ghost: 'hover:bg-primary/10 active:bg-primary/20',
 		'outline alt':
-			'text-primary hover:bg-current/10 active:bg-current/20 bg-current/5 inset-ring inset-ring-current/10',
+			'hover:bg-primary/10 active:bg-primary/20 bg-primary/5 inset-ring inset-ring-primary/10',
 		outline:
-			'text-primary hover:bg-current/10 active:bg-current inset-ring-[1.45px] inset-ring-current active:text-primary-foreground',
+			'hover:bg-primary/10 active:bg-primary inset-ring-[1.45px] inset-ring-primary active:text-primary-foreground',
 		text: 'hover:text-secondary'
 	};
 
