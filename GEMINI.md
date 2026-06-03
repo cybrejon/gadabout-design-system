@@ -1,6 +1,6 @@
 ## Project Configuration
 
-- **Language**: TypeScript
+- **Language**: JavaScript
 - **Package Manager**: npm
 - **Add-ons**: prettier, eslint, tailwindcss, sveltekit-adapter, mcp, storybook
 
