@@ -1,4 +1,10 @@
 <script>
+	/**
+	 * @typedef {Object} Props
+	 * @property {import('svelte').Snippet} children - The content to be rendered inside the decorator.
+	 */
+
+	/** @type {Props} */
 	let { children } = $props();
 </script>
 

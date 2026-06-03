@@ -1,4 +1,12 @@
 <script>
+	/**
+	 * @typedef {Object} Props
+	 * @property {import('svelte').Snippet} children - The content to be rendered inside the pill.
+	 * @property {'normal' | 'destructive' | 'ghost' | 'outline alt' | 'outline'} [variant] - The visual style of the pill.
+	 * @property {string} [class] - Additional CSS classes.
+	 */
+
+	/** @type {Props} */
 	let { children, variant = 'normal', class: className = '' } = $props();
 
 	let styles = {

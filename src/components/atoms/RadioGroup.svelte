@@ -3,6 +3,24 @@
 <script>
 	import { RadioGroup, Label, useId } from 'bits-ui';
 
+	/**
+	 * @typedef {Object} RadioItem
+	 * @property {string} value - The value of the radio item.
+	 * @property {string} label - The display label for the radio item.
+	 * @property {boolean} [disabled] - Whether the radio item is disabled.
+	 */
+
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [value] - The currently selected value.
+	 * @property {HTMLElement | null} [ref] - Reference to the radio group element.
+	 * @property {RadioItem[]} items - The list of radio items to render.
+	 * @property {'vertical' | 'horizontal'} [orientation] - The layout orientation of the radio group.
+	 * @property {string} [class] - Additional CSS classes.
+	 * @property {import('bits-ui').RadioGroupRootProps} [restProps] - Any other props to pass to the underlying radio group element.
+	 */
+
+	/** @type {Props} */
 	let {
 		value = $bindable(''),
 		ref = $bindable(null),

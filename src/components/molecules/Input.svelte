@@ -1,6 +1,21 @@
 <script>
 	import Label from '../atoms/Label.svelte';
 
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [value] - The value of the input field.
+	 * @property {string} [placeholder] - The placeholder text.
+	 * @property {string} [label] - The label for the input field.
+	 * @property {string} [label_bottom] - The label to display below the input field.
+	 * @property {string} [icon] - An optional icon class to display inside the input field.
+	 * @property {import('svelte/elements').HTMLInputTypeAttribute} [type] - The type of input field.
+	 * @property {boolean} [invalid] - Whether the input field is in an invalid state.
+	 * @property {string} [id] - The unique identifier for the input field.
+	 * @property {string} [class] - Additional CSS classes.
+	 * @property {import('svelte/elements').HTMLInputAttributes} [rest] - Any other props to pass to the underlying input element.
+	 */
+
+	/** @type {Props} */
 	let {
 		value = $bindable(''),
 		placeholder = 'Enter text',

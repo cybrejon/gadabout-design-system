@@ -1,6 +1,16 @@
 <script>
 	import { Checkbox, Label, useId } from 'bits-ui';
 
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [id] - The unique identifier for the checkbox.
+	 * @property {boolean | "indeterminate"} [checked] - The checked state of the checkbox.
+	 * @property {HTMLElement | null} [ref] - The reference to the checkbox element.
+	 * @property {HTMLElement | null} [labelRef] - The reference to the label element.
+	 * @property {string} [labelText] - The text label for the checkbox.
+	 */
+
+	/** @type {Props} */
 	let {
 		id = useId(),
 		checked = $bindable(false),
