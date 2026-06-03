@@ -14,39 +14,45 @@ Toasts are triggered programmatically via the `toast` function and rendered usin
 ```javascript
 import { toast } from 'import-path';
 
-toast("Event has been created", {
-  description: "Sunday, December 03, 2023 at 9:00 AM",
+toast('Event has been created', {
+	description: 'Sunday, December 03, 2023 at 9:00 AM'
 });
 ```
 
 ## Variants
 
 ### Default
+
 The default toast style for general notifications.
 
 <Canvas of={ToastStories.Default} />
 
 ### Success
+
 Used to confirm a successful action.
 
 <Canvas of={ToastStories.Success} />
 
 ### Error
+
 Used to notify the user of a failure or critical issue.
 
 <Canvas of={ToastStories.Error} />
 
 ### Warning
+
 Used to warn the user about a potential issue.
 
 <Canvas of={ToastStories.Warning} />
 
 ### Info
+
 Used to provide neutral information.
 
 <Canvas of={ToastStories.Info} />
 
 ### With Action
+
 Toasts can include an action button.
 
 <Canvas of={ToastStories.WithAction} />
