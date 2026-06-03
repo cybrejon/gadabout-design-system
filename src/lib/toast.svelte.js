@@ -32,11 +32,11 @@ export const toastState = $state({
 
 /**
  * Programmatically trigger a toast notification.
- * 
+ *
  * @param {string} title - The main message to display.
  * @param {ToastOptions} [options] - Configuration for the toast.
  * @returns {string} The unique ID of the created toast.
- * 
+ *
  * @example
  * toast("Message sent", { description: "Your message is on its way." });
  */
@@ -59,7 +59,7 @@ export const toast = (title, options = {}) => {
 
 /**
  * Dismiss a toast by its ID.
- * @param {string} id 
+ * @param {string} id
  */
 const dismiss = (id) => {
 	const index = toastState.toasts.findIndex((t) => t.id === id);

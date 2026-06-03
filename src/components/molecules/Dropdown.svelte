@@ -24,7 +24,7 @@
 
 <DropdownMenu.Root bind:open {...restProps}>
 	<DropdownMenu.Trigger
-		class="text-primary inline-flex cursor-pointer flex-nowrap items-center justify-center overflow-hidden rounded-full align-middle font-medium inset-ring-[1.45px] inset-ring-current outline-offset-4 transition-colors hover:bg-current/10 active:bg-current active:text-primary-foreground"
+		class="inline-flex cursor-pointer flex-nowrap items-center justify-center overflow-hidden rounded-full align-middle font-medium text-primary inset-ring-[1.45px] inset-ring-current outline-offset-4 transition-colors hover:bg-current/10 active:bg-current active:text-primary-foreground"
 	>
 		<Button variant="outline">
 			{@render icon()}

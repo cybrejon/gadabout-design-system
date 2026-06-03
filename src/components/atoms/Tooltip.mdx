@@ -16,15 +16,14 @@ A Tooltip is a small popover that appears when a user hovers over or focuses on 
 
 ```html
 <script>
-  import Tooltip from './Tooltip.svelte';
-  import Button from './Button.svelte';
+	import Tooltip from './Tooltip.svelte';
+	import Button from './Button.svelte';
 </script>
 
 <Tooltip>
-  {#snippet trigger()}
-    <Button variant="outline">Hover me</Button>
-  {/snippet}
-  This is a tooltip!
+	{#snippet trigger()}
+	<button variant="outline">Hover me</button>
+	{/snippet} This is a tooltip!
 </Tooltip>
 ```
 
