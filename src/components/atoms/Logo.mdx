@@ -1,0 +1,43 @@
+import { Canvas, Controls, Meta, Primary } from "@storybook/addon-docs/blocks";
+
+import * as LogoStories from "./Logo.stories.svelte";
+
+<Meta of={LogoStories} />
+
+# Logo
+
+The Logo component is used to display the brand identity of Gadabout or a custom entity.
+It supports custom images, alt text, and styling via classes.
+
+<Primary />
+<Controls />
+
+## Examples
+
+### Default Logo
+
+By default, the component renders the Gadabout logo.
+
+<Canvas of={LogoStories.Main} />
+
+### Custom Image
+
+You can provide a custom `src` and `alt` text to use the component for other logos.
+
+### Custom Class
+
+Alter the logo with TailwindCSS via `class`.
+
+<Canvas of={LogoStories.CustomClass} />
+
+## Usage Guidelines
+
+### When to use
+
+- Use this component whenever you need to display the Gadabout logo.
+- Use it to display client or partner logos by providing the `src` prop.
+
+### Best practices
+
+- Always provide meaningful `alt` text for custom logos to ensure accessibility.
+- Maintain consistent sizing across different logos when used in a grid or list.
