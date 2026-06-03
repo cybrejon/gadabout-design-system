@@ -22,7 +22,7 @@
 		variant = 'normal',
 		href: button_link = '',
 		size = 'normal',
-		class: style = '',
+		class: className = '',
 		onclick,
 		type = 'button',
 		disabled = false,
@@ -57,7 +57,7 @@
 		{...restProps}
 		class="inline-flex cursor-pointer flex-nowrap items-center justify-center rounded-full align-middle font-medium outline-offset-4 transition-colors {styles[
 			variant
-		]} {sizes[size]} {style}"
+		]} {sizes[size]} {className}"
 	>
 		{@render children?.()}
 	</a>
@@ -69,7 +69,7 @@
 		{onclick}
 		class="inline-flex cursor-pointer flex-nowrap items-center justify-center rounded-full align-middle font-medium outline-offset-4 transition-colors {styles[
 			variant
-		]} {sizes[size]} {style} disabled:cursor-not-allowed disabled:opacity-50"
+		]} {sizes[size]} {className} disabled:cursor-not-allowed disabled:opacity-50"
 	>
 		{@render children?.()}
 	</Button.Root>

@@ -6,7 +6,7 @@
 	 */
 
 	/** @type {Props} */
-	let { class: style = '', ...restProps } = $props();
+	let { class: className = '', ...restProps } = $props();
 </script>
 
-<img src="/images/logo.svg" alt="Gadabout" class={style} {...restProps} />
+<img src="/images/logo.svg" alt="Gadabout" class={className} {...restProps} />
