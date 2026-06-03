@@ -1,6 +1,18 @@
 <script>
 	import { Progress, useId } from 'bits-ui';
 
+	/**
+	 * @typedef {Object} Props
+	 * @property {number} [max] - The maximum value of the progress bar.
+	 * @property {number | null} [value] - The current value of the progress bar.
+	 * @property {number} [min] - The minimum value of the progress bar.
+	 * @property {string} [label] - The label for the progress bar.
+	 * @property {string} [valueLabel] - The label for the current value.
+	 * @property {'normal' | 'sm'} [size] - The size of the progress bar.
+	 * @property {import('bits-ui').ProgressRootProps} [restProps] - Any other props to pass to the underlying progress element.
+	 */
+
+	/** @type {Props} */
 	let {
 		max = 100,
 		value = 0,

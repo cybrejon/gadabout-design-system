@@ -2,6 +2,23 @@
 	import { DropdownMenu } from 'bits-ui';
 	import Button from '../atoms/Button.svelte';
 
+	/**
+	 * @typedef {Object} DropdownItem
+	 * @property {string} name - The display name of the dropdown item.
+	 * @property {Function} [callback] - The function to execute when the item is clicked.
+	 */
+
+	/**
+	 * @typedef {Object} Props
+	 * @property {boolean} [open] - The open state of the dropdown.
+	 * @property {string} [buttonText] - The text to display on the dropdown trigger button.
+	 * @property {DropdownItem[]} items - The list of items to render in the dropdown menu.
+	 * @property {import('bits-ui').DropdownMenuContentProps} [contentProps] - Props to pass to the dropdown content element.
+	 * @property {import('svelte').Snippet} icon - An optional icon to display in the trigger button.
+	 * @property {import('bits-ui').DropdownMenuRootProps} [restProps] - Any other props to pass to the underlying dropdown menu element.
+	 */
+
+	/** @type {Props} */
 	let { open = $bindable(false), buttonText, items, contentProps, icon, ...restProps } = $props();
 </script>
 

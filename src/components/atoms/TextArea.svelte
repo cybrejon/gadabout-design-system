@@ -1,6 +1,21 @@
 <script>
 	import Label from './Label.svelte';
 
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [value] - The value of the text area.
+	 * @property {string} [id] - The unique identifier for the text area.
+	 * @property {string} [label] - The label for the text area.
+	 * @property {string} [label_bottom] - The label to display below the text area.
+	 * @property {string} [placeholder] - The placeholder text.
+	 * @property {boolean} [invalid] - Whether the text area is in an invalid state.
+	 * @property {number} [rows] - The number of visible text lines.
+	 * @property {number} [cols] - The visible width of the text area.
+	 * @property {string} [class] - Additional CSS classes.
+	 * @property {import('svelte/elements').HTMLTextareaAttributes} [rest] - Any other props to pass to the underlying textarea element.
+	 */
+
+	/** @type {Props} */
 	let {
 		value = $bindable(''),
 		id = crypto.randomUUID(),

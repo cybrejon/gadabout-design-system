@@ -1,6 +1,19 @@
 <script>
 	import Button from '../atoms/Button.svelte';
 
+	/**
+	 * @typedef {Object} BreadcrumbItem
+	 * @property {string} name - The display name of the breadcrumb item.
+	 * @property {string} [link] - The URL the breadcrumb item links to.
+	 * @property {boolean} [active] - Whether the breadcrumb item is currently active.
+	 */
+
+	/**
+	 * @typedef {Object} Props
+	 * @property {BreadcrumbItem[]} items - The list of breadcrumb items to render.
+	 */
+
+	/** @type {Props} */
 	let { items = [] } = $props();
 </script>
 
