@@ -1,0 +1,50 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as LinkStories from './Link.stories.svelte';
+
+<Meta of={LinkStories} />
+
+# Link
+
+A dedicated link component for navigation, using a standard HTML anchor tag and supporting various visual variants.
+
+<Canvas of={LinkStories.Default} />
+
+## Props
+
+<Controls />
+
+## Usage Guidelines
+
+### Best Practices
+- Avoid adding icons if the link is inline with text or inside a long paragraph.
+
+### Variants
+
+The `Link` component supports three variants:
+
+- **hover** (default): Underline appears on hover.
+- **ghost**: Lower opacity by default, becomes fully opaque on hover.
+- **none**: No special visual feedback beyond basic styling.
+
+```html
+<Link href="/about" variant="hover">About Us</Link>
+<Link href="/docs" variant="ghost">Documentation</Link>
+```
+
+### Icons
+
+Apply `inline-flex` + `items-center` if planning to interpolate link with icon. Does not play well alongside normal text visually so use sparingly.
+
+```html
+<!-- Using Iconify Tailwind (if configured) -->
+<Link class="inline-flex items-center gap-1.5" href="#">
+  <span class="icon-[lucide--link-2] size-4"></span>
+  Link with Icon
+</Link>
+
+<!-- Or with an external link icon on the right -->
+<Link class="inline-flex items-center gap-1.5" href="https://example.com" target="_blank">
+  Visit Website
+  <span class="icon-[lucide--external-link] size-4"></span>
+</Link>
+```
