@@ -16,11 +16,9 @@
 	};
 </script>
 
-<div role="status" class="inline-block {className}" aria-label={label} {...restProps}>
-	<span class="icon-[lucide--loader-circle] animate-spin {sizes[size]}"></span>
-	<span
-		class="absolute! -m-px! h-px! w-px! overflow-hidden! border-0! p-0! whitespace-nowrap! [clip:rect(0,0,0,0)]!"
-	>
+<div role="status" class="inline-block {className}" {...restProps}>
+	<span class="icon-[lucide--loader-circle] block animate-spin {sizes[size] || sizes.md}"></span>
+	<span class="sr-only">
 		{label}
 	</span>
 </div>
