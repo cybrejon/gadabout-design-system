@@ -3,7 +3,7 @@
 	import Link from './Link.svelte';
 
 	const { Story } = defineMeta({
-		title: 'Atoms/Link',
+		title: 'Component/Atoms/Navigation/Link',
 		component: Link,
 		argTypes: {
 			variant: {
