@@ -1,6 +1,5 @@
 <script>
 	import { resolve } from '$app/paths';
-	import { Button } from 'bits-ui';
 
 	/**
 	 * @typedef {Object} Props
@@ -12,11 +11,10 @@
 	 * @property {import('svelte/elements').MouseEventHandler<any>} [onclick] - Click event handler.
 	 * @property {'button' | 'submit' | 'reset'} [type] - The HTML button type.
 	 * @property {boolean} [disabled] - Whether the button is disabled.
-	 * @property {import('bits-ui').ButtonProps} [restProps] - Any other props to pass to the underlying element.
+	 * @property {Record<string, any>} [restProps] - Any other props to pass to the underlying element.
 	 */
 
 	/** @type {Props} */
-
 	let {
 		children,
 		variant = 'normal',
@@ -48,6 +46,9 @@
 		'text sm': 'gap-2 text-xs',
 		sidebar: 'w-full justify-start rounded-xl px-4 py-2 gap-3 text-sm'
 	};
+
+	const baseClass =
+		'inline-flex cursor-pointer flex-nowrap items-center justify-center rounded-full align-middle font-medium outline-offset-4 transition-colors disabled:cursor-not-allowed disabled:opacity-50';
 </script>
 
 {#if button_link && !disabled}
@@ -55,22 +56,18 @@
 		href={resolve(button_link)}
 		{onclick}
 		{...restProps}
-		class="inline-flex cursor-pointer flex-nowrap items-center justify-center rounded-full align-middle font-medium outline-offset-4 transition-colors {styles[
-			variant
-		]} {sizes[size]} {className}"
+		class="{baseClass} {styles[variant]} {sizes[size]} {className}"
 	>
 		{@render children?.()}
 	</a>
 {:else}
-	<Button.Root
+	<button
 		{type}
 		{disabled}
-		{...restProps}
 		{onclick}
-		class="inline-flex cursor-pointer flex-nowrap items-center justify-center rounded-full align-middle font-medium outline-offset-4 transition-colors {styles[
-			variant
-		]} {sizes[size]} {className} disabled:cursor-not-allowed disabled:opacity-50"
+		{...restProps}
+		class="{baseClass} {styles[variant]} {sizes[size]} {className}"
 	>
 		{@render children?.()}
-	</Button.Root>
+	</button>
 {/if}
