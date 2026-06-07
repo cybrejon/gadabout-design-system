@@ -1,0 +1,64 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+
+import * as SpinnerStories from './Spinner.stories.svelte';
+
+<Meta of={SpinnerStories} />
+
+# Spinner
+
+A spinner is used to indicate a loading state or a process that is taking place.
+It provides visual feedback to the user that the system is busy and working on their request.
+
+<Primary />
+<Controls />
+
+## Sizes
+
+### Small
+
+Used for tight spaces, such as inside buttons or small cards.
+
+<Canvas of={SpinnerStories.Small} />
+
+### Medium
+
+The default size, suitable for most general loading states.
+
+<Canvas of={SpinnerStories.Medium} />
+
+### Large
+
+Used for full-page loading states or large sections.
+
+<Canvas of={SpinnerStories.Large} />
+
+## Colors
+
+The spinner inherits the text color (`currentColor`). You can change its color by passing a Tailwind text color class.
+
+### Primary
+
+<Canvas of={SpinnerStories.CustomColor} />
+
+### Secondary
+
+<Canvas of={SpinnerStories.SecondaryColor} />
+
+## Usage Guidelines
+
+### When to use
+
+- Use a spinner when an action takes more than 1 second to complete.
+- Use a spinner for background processes that the user should be aware of.
+- Place the spinner in the context of the action (e.g., inside a button or in the center of a loading list).
+
+### When not to use
+
+- Do not use a spinner if the action is expected to be nearly instantaneous.
+- For long-running processes where progress can be measured, use the `Progress` component instead.
+- Avoid using multiple spinners on the same screen if possible.
+
+### Best practices
+
+- Always provide an `aria-label` for screen readers (defaults to "Loading...").
+- Ensure the spinner's color has sufficient contrast against the background.
