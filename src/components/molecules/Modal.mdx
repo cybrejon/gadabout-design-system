@@ -1,0 +1,58 @@
+import { Canvas, Meta, Controls } from '@storybook/addon-docs/blocks';
+import * as ModalStories from './Modal.stories.svelte';
+
+<Meta of={ModalStories} />
+
+# Modal
+
+A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+
+<Canvas of={ModalStories.Main} />
+
+<Controls />
+
+## Usage Guidelines
+
+Modals use [Bits UI Dialog](https://bits-ui.com/docs/components/dialog) under the hood. To add a close button inside your modal content, you can use `Dialog.Close` from `bits-ui`.
+
+```svelte
+<script>
+  import { Modal, Button } from 'gadabout-design-system';
+  import { Dialog } from 'bits-ui';
+</script>
+
+<Modal>
+  {#snippet trigger()}
+    <Button>Open</Button>
+  {/snippet}
+
+  {#snippet title()}Title{/snippet}
+
+  <p>Content...</p>
+
+  {#snippet footer()}
+    <Dialog.Close asChild>
+      {#snippet child({ props })}
+        <Button {...props} variant="ghost">Cancel</Button>
+      {/snippet}
+    </Dialog.Close>
+  {/snippet}
+</Modal>
+```
+
+### When to use
+
+- Use for tasks that require the user's immediate attention.
+- Use to provide additional information without navigating away from the current context.
+- Use for confirming destructive actions or important decisions.
+
+### When not to use
+
+- Do not use for simple messages that don't require user interaction; use a Toast instead.
+- Do not use if the content is too complex or requires extensive navigation; consider a new page.
+
+### Best practices
+
+- **Title is mandatory:** Always provide a concise and descriptive title.
+- Ensure the primary action is clear and visually distinct.
+- Provide a clear way to dismiss the modal (e.g., a close button or cancel action).
