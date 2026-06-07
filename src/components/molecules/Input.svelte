@@ -52,7 +52,7 @@
 					'w-full rounded-xl border-2 py-2 text-sm outline-3 outline-offset-0 outline-transparent transition-colors placeholder:text-sm focus-visible:ring-transparent',
 					icon ? 'pr-2 pl-9' : 'px-3',
 					invalid
-						? 'border-destructive/70 bg-destructive/5 text-destructive saturate-80 placeholder:text-destructive focus-visible:outline-destructive/20 focus-visible:saturate-100'
+						? 'border-destructive/20 bg-destructive/5 text-destructive saturate-80 placeholder:text-destructive focus-visible:border-destructive/70 focus-visible:outline-destructive/20 focus-visible:saturate-100'
 						: 'focus: border bg-card placeholder:text-foreground-alt focus-visible:border-primary/50 focus-visible:outline-primary/10',
 					className
 				]}
