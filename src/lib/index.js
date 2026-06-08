@@ -24,3 +24,4 @@ export { default as Dropdown } from '../components/molecules/Dropdown.svelte';
 export { default as InfoChip } from '../components/molecules/InfoChip.svelte';
 export { default as Input } from '../components/molecules/Input.svelte';
 export { default as Modal } from '../components/molecules/Modal.svelte';
+export { default as Popover } from '../components/molecules/Popover.svelte';

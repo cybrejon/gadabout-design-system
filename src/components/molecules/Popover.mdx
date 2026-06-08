@@ -1,0 +1,50 @@
+import { Canvas, Meta, Controls } from '@storybook/addon-docs/blocks';
+import * as PopoverStories from './Popover.stories.svelte';
+
+<Meta of={PopoverStories} />
+
+# Popover
+
+Displays rich content in a portal, triggered by a button.
+
+<Canvas of={PopoverStories.Default} />
+
+<Controls />
+
+## Usage Guidelines
+
+Popovers use [Bits UI Popover](https://bits-ui.com/docs/components/popover) under the hood. They are ideal for displaying additional information or small forms without navigating away from the current page.
+
+```html
+<script>
+  import { Popover, Button } from 'gadabout-design-system';
+</script>
+
+<Popover>
+  {#snippet trigger()}
+    <Button>Open Popover</Button>
+  {/snippet}
+
+  <div>
+    <h4 class="font-medium">Settings</h4>
+    <p class="text-sm text-foreground-alt">Configure your preferences here.</p>
+  </div>
+</Popover>
+```
+
+### When to use
+
+- Use for providing additional context or information about a specific element.
+- Use for small forms or settings that don't require the full attention of a Modal.
+- Use when you want to show content that is contextual to a specific trigger.
+
+### When not to use
+
+- Do not use for large amounts of content or complex workflows; consider a Modal instead.
+- Do not use for simple tooltips (short text on hover); use the Tooltip component.
+
+### Best practices
+
+- Ensure the trigger is clearly labeled.
+- Keep the content concise and focused.
+- Provide a clear way to close the popover (usually by clicking outside or a close button inside).
