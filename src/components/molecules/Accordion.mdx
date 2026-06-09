@@ -1,0 +1,61 @@
+import { Canvas, Meta, Controls } from '@storybook/addon-docs/blocks';
+
+import * as AccordionStories from './Accordion.stories.svelte';
+
+<Meta of={AccordionStories} />
+
+# Accordion
+
+The Accordion component is a vertically stacked set of interactive headings that each contain a title and associated content. It allows users to toggle the visibility of sections of content, saving vertical space and reducing visual clutter.
+
+Built with accessibility in mind utilizing [Bits UI Accordion](https://bits-ui.com/docs/components/accordion) under the hood.
+
+<Canvas of={AccordionStories.Bordered} />
+
+<Controls />
+
+## Variants
+
+### Bordered (Default)
+
+The classic layout with a unified border around the accordion, separating the sections with horizontal dividers.
+
+<Canvas of={AccordionStories.Bordered} />
+
+### Separated Cards
+
+A premium card-based layout where each accordion item is a separate, self-contained card with vertical spacing, shadow, and hover/focus highlights.
+
+<Canvas of={AccordionStories.Separated} />
+
+### Ghost
+
+A minimal style with transparent backgrounds and no borders, using only hover backgrounds for focus indicators.
+
+<Canvas of={AccordionStories.Ghost} />
+
+### Custom Snippets
+
+For highly-customized styling, you can pass custom Svelte 5 snippets (`titleSnippet` and `contentSnippet`) to override the default text rendering with custom icons, badge designs, or rich block layouts.
+
+<Canvas of={AccordionStories.Custom} />
+
+## Usage Guidelines
+
+### When to use
+
+- Use to organize information-heavy pages, such as FAQs, product specifications, or options lists.
+- Use when users only need to read one or a few sections of content at a time.
+- Use to reduce page scrolling and keep the main content above the fold.
+
+### When not to use
+
+- Do not use if the user needs to read all of the sections simultaneously (in that case, use standard headings and text blocks).
+- Do not use if there are very few items (less than 2-3 items) with short content; plain text is cleaner.
+- Do not use for primary navigation; use menus or tab systems instead.
+
+### Best practices
+
+- Label the section headings clearly and descriptively.
+- Order the accordion items logically (e.g., most frequently asked questions first).
+- Use `type="single"` when users should focus on one topic at a time, and `type="multiple"` when comparison between sections is helpful.
