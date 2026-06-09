@@ -37,7 +37,6 @@
 		...restProps
 	} = $props();
 
-	// Style classes mapping
 	const rootClasses = {
 		bordered: 'border border-border rounded-xl overflow-hidden bg-card divide-y divide-border',
 		separated: 'flex flex-col gap-3',
