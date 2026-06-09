@@ -17,26 +17,26 @@ Modals use [Bits UI Dialog](https://bits-ui.com/docs/components/dialog) under th
 
 ```svelte
 <script>
-  import { Modal, Button } from 'gadabout-design-system';
-  import { Dialog } from 'bits-ui';
+	import { Modal, Button } from 'gadabout-design-system';
+	import { Dialog } from 'bits-ui';
 </script>
 
 <Modal>
-  {#snippet trigger()}
-    <Button>Open</Button>
-  {/snippet}
+	{#snippet trigger()}
+		<Button>Open</Button>
+	{/snippet}
 
-  {#snippet title()}Title{/snippet}
+	{#snippet title()}Title{/snippet}
 
-  <p>Content...</p>
+	<p>Content...</p>
 
-  {#snippet footer()}
-    <Dialog.Close asChild>
-      {#snippet child({ props })}
-        <Button {...props} variant="ghost">Cancel</Button>
-      {/snippet}
-    </Dialog.Close>
-  {/snippet}
+	{#snippet footer()}
+		<Dialog.Close asChild>
+			{#snippet child({ props })}
+				<Button {...props} variant="ghost">Cancel</Button>
+			{/snippet}
+		</Dialog.Close>
+	{/snippet}
 </Modal>
 ```
 

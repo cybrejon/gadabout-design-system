@@ -17,18 +17,18 @@ Popovers use [Bits UI Popover](https://bits-ui.com/docs/components/popover) unde
 
 ```html
 <script>
-  import { Popover, Button } from 'gadabout-design-system';
+	import { Popover, Button } from 'gadabout-design-system';
 </script>
 
 <Popover>
-  {#snippet trigger()}
-    <Button>Open Popover</Button>
-  {/snippet}
+	{#snippet trigger()}
+	<button>Open Popover</button>
+	{/snippet}
 
-  <div>
-    <h4 class="font-medium">Settings</h4>
-    <p class="text-sm text-foreground-alt">Configure your preferences here.</p>
-  </div>
+	<div>
+		<h4 class="font-medium">Settings</h4>
+		<p class="text-sm text-foreground-alt">Configure your preferences here.</p>
+	</div>
 </Popover>
 ```
 
