@@ -51,7 +51,7 @@
 			{#if title || description}
 				<div class="border-b border-b-border p-4">
 					{#if title}
-						<h4 class="font-medium leading-none">
+						<h4 class="leading-none font-medium">
 							{@render title()}
 						</h4>
 					{/if}
