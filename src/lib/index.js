@@ -11,6 +11,7 @@ export { default as Metadata } from '../components/atoms/Metadata.svelte';
 export { default as Pill } from '../components/atoms/Pill.svelte';
 export { default as Progress } from '../components/atoms/Progress.svelte';
 export { default as Spinner } from '../components/atoms/Spinner.svelte';
+export { default as Skeleton } from '../components/atoms/Skeleton.svelte';
 export { default as RadioGroup } from '../components/atoms/RadioGroup.svelte';
 export { default as TextArea } from '../components/atoms/TextArea.svelte';
 export { default as Toast } from '../components/atoms/Toast.svelte';
