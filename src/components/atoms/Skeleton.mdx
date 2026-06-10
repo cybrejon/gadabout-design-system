@@ -1,0 +1,89 @@
+import { Canvas, Controls, Meta, Primary } from '@storybook/addon-docs/blocks';
+
+import * as SkeletonStories from './Skeleton.stories.svelte';
+
+<Meta of={SkeletonStories} />
+
+# Skeleton
+
+A skeleton component is used to display a placeholder preview of content while it is loading.
+Instead of showing a blank screen or a generic spinner, it visualizes the structure of the incoming content, improving perceived performance and user experience.
+
+<Primary />
+<Controls />
+
+## Shapes
+
+### Rectangle
+
+Used for general content blocks, image previews, or card shapes.
+
+<Canvas of={SkeletonStories.Rectangle} />
+
+### Circle
+
+Ideal for avatars, circular buttons, icons, or status badges.
+
+<Canvas of={SkeletonStories.Circle} />
+
+### Text Line
+
+Designed to look like lines of text. Can be stacked to mimic paragraphs.
+
+<Canvas of={SkeletonStories.TextLine} />
+
+## Animations
+
+The Skeleton component supports two loading animations:
+
+- `pulse`: A gentle opacity fade (default).
+- `shimmer`: A smooth light-wave sweeping across the component, offering a premium and polished feel.
+- `none`: A static placeholder without animation.
+
+### Shimmer Animation
+
+<Canvas of={SkeletonStories.ShimmerAnimation} />
+
+### No Animation
+
+<Canvas of={SkeletonStories.NoAnimation} />
+
+## Composite Layouts
+
+By combining multiple Skeleton components with different shapes, you can design full layout placeholders that match content perfectly.
+
+### Card Preview Layout
+
+Here is how you can build a standard card loading skeleton layout:
+
+```html
+<div class="flex max-w-sm items-center gap-4 rounded-xl border border-border bg-card p-3">
+	<Skeleton variant="circle" animate="shimmer" class="h-12 w-12" />
+	<div class="flex min-w-50 flex-1 flex-col gap-2">
+		<Skeleton variant="text" animate="shimmer" class="w-3/4" />
+		<Skeleton variant="text" animate="shimmer" class="w-1/2" />
+	</div>
+</div>
+```
+
+<Canvas of={SkeletonStories.CardPreviewLayout} />
+
+## Usage Guidelines
+
+### When to use
+
+- Use when content takes more than 1.5 seconds to load and the structure of the layout is already known.
+- Use to replace lists, cards, avatars, and text segments while fetching data asynchronously.
+- Use shimmer animations on high-priority interfaces to give a premium, responsive feel.
+
+### When not to use
+
+- Do not use for fast transitions (less than 500ms), as flashing skeletons can look jittery.
+- Avoid using skeletons if the final layout structure is completely unpredictable; in that case, a standard `Spinner` is preferred.
+- Do not use skeletons for infinite scrolling spinners or pagination triggers at the bottom of a list; use a simple spinner or text instead.
+
+### Best practices
+
+- Ensure the width and height of the skeleton component match the expected size of the final content to avoid layout shifts (CLS) when the content renders.
+- Avoid making the skeleton colors too dark or high-contrast; they should feel subtle and unobtrusive.
+- For screen-reader accessibility, the skeleton element includes a default `role="status"` and `aria-live="polite"` with an invisible `Loading...` text.
