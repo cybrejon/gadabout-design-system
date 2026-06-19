@@ -1,4 +1,5 @@
 <script>
+	import { useId } from 'bits-ui';
 	import Label from '../atoms/Label.svelte';
 
 	/**
@@ -24,7 +25,7 @@
 		icon,
 		type = 'text',
 		invalid = false,
-		id = crypto.randomUUID(),
+		id = useId(),
 		class: className,
 		...rest
 	} = $props();
