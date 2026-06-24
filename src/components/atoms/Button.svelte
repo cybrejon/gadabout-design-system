@@ -4,7 +4,7 @@
 	/**
 	 * @typedef {Object} Props
 	 * @property {import('svelte').Snippet} [children] - The button content.
-	 * @property {'normal' | 'destructive' | 'ghost' | 'outline alt' | 'outline' | 'text'} [variant] - The visual style of the button.
+	 * @property {'normal' | 'secondary' | 'accent' | 'destructive' | 'ghost' | 'outline alt' | 'outline' | 'text'} [variant] - The visual style of the button.
 	 * @property {string} [href] - An optional URL to make the button behave as a link.
 	 * @property {'normal' | 'sm' | 'text' | 'text md' | 'text sm' | 'sidebar'} [size] - The size and padding of the button.
 	 * @property {string} [class] - Additional CSS classes.
@@ -29,6 +29,8 @@
 
 	const styles = {
 		normal: 'bg-primary text-primary-foreground active:text-primary-foreground/80',
+		secondary: 'bg-secondary text-primary-foreground active:text-primary-foreground/80',
+		accent: 'bg-accent text-primary-foreground active:text-primary-foreground/80',
 		destructive: 'bg-destructive text-primary-foreground active:text-primary-foreground/80',
 		ghost: 'hover:bg-primary/10 active:bg-primary/20',
 		'outline alt':
