@@ -124,7 +124,7 @@
 					<h5 class="text-sm leading-snug font-semibold">{title}</h5>
 				{/if}
 				{#if description}
-					<div class="text-xs leading-none opacity-90">{description}</div>
+					<div class="text-xs opacity-90">{description}</div>
 				{:else if children}
 					<div class="text-xs leading-relaxed opacity-90">
 						{@render children()}
