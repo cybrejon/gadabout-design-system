@@ -76,29 +76,6 @@
 			</Button>
 		{/if}
 
-		{#if type === 'error'}
-			<Tooltip.Provider>
-				<ToastTooltip class="z-200">
-					{#snippet trigger()}
-						<div class="border-r border-r-border pr-2.5">
-							<Button
-								variant="text"
-								size="text"
-								aria-label="Copy Toast Warning"
-								onclick={() => {
-									action.onClick();
-									toast.dismiss(id);
-								}}
-							>
-								<span class="icon-[lucide--copy]"></span>
-							</Button>
-						</div>
-					{/snippet}
-					Copy error details
-				</ToastTooltip>
-			</Tooltip.Provider>
-		{/if}
-
 		<Button onclick={() => toast.dismiss(id)} variant="text" size="text" aria-label="Close">
 			<span class="icon-[lucide--x]"></span>
 		</Button>
