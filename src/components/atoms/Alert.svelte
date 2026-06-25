@@ -119,7 +119,7 @@
 		{/if}
 
 		<div class="flex grow flex-col gap-2.5">
-			<div class="flex flex-col gap-0.5">
+			<div class="flex flex-col">
 				{#if title}
 					<h5 class="text-sm leading-snug font-semibold">{title}</h5>
 				{/if}
