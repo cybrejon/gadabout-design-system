@@ -1,8 +1,6 @@
 <script>
 	import { toast } from '../../lib/toast.svelte';
 	import Button from './Button.svelte';
-	import ToastTooltip from './Tooltip.svelte';
-	import { Tooltip } from 'bits-ui';
 	import { fly } from 'svelte/transition';
 
 	/**
