@@ -1,0 +1,257 @@
+import { Meta, Primary, Controls, Canvas } from '@storybook/addon-docs/blocks';
+import * as AlertStories from './Alert.stories.svelte';
+
+<Meta of={AlertStories} />
+
+# Alert
+
+An Alert displays an important, high-priority message or feedback in a non-intrusive banner. It provides users with context-sensitive information, such as success feedback, warnings, system updates, or error logs.
+
+Alerts are designed to be part of the page layout, rather than temporary overlays like Toasts.
+
+<Primary />
+<Controls />
+
+## Appearances
+
+The Alert component supports three distinct appearances to fit different layout densities and visual weight requirements:
+
+### Soft (Default)
+
+The soft appearance uses a subtle, translucent background tint with a matching left accent border. It provides high scannability without overwhelming the page content.
+
+<Canvas of={AlertStories.InfoSoft} />
+
+### Outline
+
+The outline appearance features a transparent background with a thin border. It is ideal for low-emphasis messages or embedded blocks in cards.
+
+<Canvas of={AlertStories.OutlineAppearance} />
+
+### Solid
+
+The solid appearance uses a fully filled block of color with high contrast text. It is designed to grab maximum user attention, perfect for critical errors or banner updates.
+
+<Canvas of={AlertStories.SolidAppearance} />
+
+## Semantic Variants
+
+Alerts come in five semantic variants that correspond to different emotional states and brand colors:
+
+- **Primary**: Brand-focused announcements and feature callouts.
+- **Info**: Neutral updates and informational messages.
+- **Success**: Positive confirmations of completed tasks.
+- **Warning**: Advisories about potential actions or limits.
+- **Error**: Critical notices about failures or data loss.
+
+### Success Soft
+
+<Canvas of={AlertStories.SuccessSoft} />
+
+### Warning Soft
+
+<Canvas of={AlertStories.WarningSoft} />
+
+### Error Soft
+
+<Canvas of={AlertStories.ErrorSoft} />
+
+## Features
+
+### Dismissible
+
+When `dismissible` is set to `true`, a close button is rendered on the right. The component automatically handles fading out and collapsing when closed, and calls the optional `ondismiss` callback.
+
+<Canvas of={AlertStories.Dismissible} />
+
+### Actions
+
+Provide supplementary actions (e.g., links or buttons) inside the alert using the `#snippet actions` block. These are placed cleanly below the alert text.
+
+<Canvas of={AlertStories.WithActions} />
+
+### Custom Icon
+
+You can override the default semantic icons by providing a custom icon using the `#snippet icon` block.
+
+<Canvas of={AlertStories.CustomIcon} />
+
+### Compact Layout
+
+If no `title` is provided, the alert automatically adjusts its padding and alignment to a compact, single-line format.
+
+<Canvas of={AlertStories.NoTitleCompact} />
+
+---
+
+## API Reference
+
+### Properties
+
+<table>
+	<tr>
+		<th>Property</th>
+		<th>Type</th>
+		<th>Default</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>`variant`</td>
+		<td>`'primary' | 'info' | 'success' | 'warning' | 'error'`</td>
+		<td>`'info'`</td>
+		<td>The visual style and semantic meaning of the alert.</td>
+	</tr>
+	<tr>
+		<td>`appearance`</td>
+		<td>`'soft' | 'outline' | 'solid'`</td>
+		<td>`'soft'`</td>
+		<td>The visual style/density option of the alert.</td>
+	</tr>
+	<tr>
+		<td>`title`</td>
+		<td>`string`</td>
+		<td>—</td>
+		<td>An optional bold header text.</td>
+	</tr>
+	<tr>
+		<td>`description`</td>
+		<td>`string`</td>
+		<td>—</td>
+		<td>The description text. Can also be provided via the default children snippet.</td>
+	</tr>
+	<tr>
+		<td>`dismissible`</td>
+		<td>`boolean`</td>
+		<td>`false`</td>
+		<td>If `true`, a close button is displayed and the alert can be closed.</td>
+	</tr>
+	<tr>
+		<td>`hideIcon`</td>
+		<td>`boolean`</td>
+		<td>`false`</td>
+		<td>If `true`, the leading icon is hidden.</td>
+	</tr>
+	<tr>
+		<td>`class`</td>
+		<td>`string`</td>
+		<td>`""`</td>
+		<td>Additional CSS classes for the root container.</td>
+	</tr>
+	<tr>
+		<td>`ondismiss`</td>
+		<td>`() => void`</td>
+		<td>—</td>
+		<td>Callback function triggered when the close button is clicked.</td>
+	</tr>
+</table>
+
+### Snippets (Slots)
+
+<table>
+	<tr>
+		<th>Snippet</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>`icon`</td>
+		<td>Custom icon to render, overriding the default semantic icon.</td>
+	</tr>
+	<tr>
+		<td>`actions`</td>
+		<td>Action elements (buttons, links) to render below the description text.</td>
+	</tr>
+	<tr>
+		<td>`children`</td>
+		<td>The default content slot, used to render rich description layouts.</td>
+	</tr>
+</table>
+
+---
+
+## Code Examples
+
+### Basic Alert
+
+```html
+<script>
+	import { Alert } from 'gadabout-design-system';
+</script>
+
+<Alert
+	variant="info"
+	title="System Update"
+	description="Scheduled maintenance will occur tonight at 12:00 AM UTC."
+/>
+```
+
+### Dismissible Success Alert
+
+```html
+<script>
+	import { Alert } from 'gadabout-design-system';
+
+	function handleClose() {
+		console.log('Success alert was dismissed');
+	}
+</script>
+
+<Alert
+	variant="success"
+	title="Settings Saved"
+	description="Your profile preferences have been successfully updated."
+	dismissible={true}
+	ondismiss={handleClose}
+/>
+```
+
+### Alert with Custom Actions
+
+```html
+<script>
+	import { Alert, Button } from 'gadabout-design-system';
+
+	function handleRenew() {
+		// handle renewal action
+	}
+</script>
+
+<Alert
+	variant="warning"
+	title="Plan Expiring Soon"
+	description="Your trial period ends in 3 days. Upgrade to continue using premium features."
+>
+	{#snippet actions()}
+		<Button size="sm" variant="outline">Learn More</Button>
+		<Button size="sm" variant="normal" onclick={handleRenew}>Upgrade Now</Button>
+	{/snippet}
+</Alert>
+```
+
+### Compact Single-line Alert
+
+```html
+<script>
+	import { Alert } from 'gadabout-design-system';
+</script>
+
+<Alert
+	variant="error"
+	appearance="outline"
+	description="Failed to sync changes with the server. Retrying in 5s..."
+/>
+```
+
+---
+
+## Usage Guidelines
+
+### When to use
+
+- Use alerts to notify users of system status changes or immediate feedback on actions they took.
+- Use the `soft` appearance for most standard notifications within forms or dashboards.
+- Use the `solid` appearance sparingly, reserved for critical failures or global banner announcements.
+
+### When not to use
+
+- Do not use alerts for fleeting notifications that don't require persistent visibility; use [Toast](?path=/docs/component-atoms-feedback-toast--docs) instead.
+- Do not overload a single page with multiple alerts, as this creates visual fatigue.
