@@ -1,0 +1,51 @@
+import { Canvas, Meta, Primary, Controls } from '@storybook/addon-docs/blocks';
+
+import * as SwitchStories from './Switch.stories.svelte';
+
+<Meta of={SwitchStories} />
+
+# Switch
+
+A switch (or toggle switch) is an interactive control that allows users to quickly toggle between two mutually exclusive states (on/off, active/inactive). Switches are typically used for settings and preferences that take effect immediately.
+
+## Variants
+
+### Default
+
+The default unchecked state of the switch.
+
+<Canvas of={SwitchStories.Default} />
+
+### Checked
+
+The checked (active/on) state of the switch.
+
+<Canvas of={SwitchStories.Checked} />
+
+### Disabled
+
+The disabled state of the switch, preventing user interaction.
+
+<Canvas of={SwitchStories.Disabled} />
+
+## Usage Guidelines
+
+### When to use
+
+- Use for binary settings or preferences that take effect immediately upon toggle.
+- Use as an alternative to a standalone checkbox when the action is an immediate configuration change rather than part of a form submission.
+
+### When not to use
+
+- Do not use in a multi-step form where choices are not applied until the form is submitted (use a Checkbox instead).
+- Do not use when multiple options can be chosen from a set (use Checkboxes).
+- Do not use when only one option from a set of 3 or more options can be chosen (use a RadioGroup).
+
+### Best practices
+
+- Always provide a clear, concise label next to the switch.
+- The label should describe the feature or setting the switch controls, rather than the actions "On" or "Off".
+
+## Controls
+
+<Controls />
