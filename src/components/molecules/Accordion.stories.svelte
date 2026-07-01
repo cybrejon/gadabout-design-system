@@ -101,7 +101,7 @@
 				{/snippet}
 				{#snippet contentSnippet(item)}
 					<div class="rounded-lg border border-primary/10 bg-primary/5 p-4">
-						<p class="mb-2 font-semibold text-primary">Detailed Response:</p>
+						<h5 class="mb-2 font-semibold text-primary">Detailed Response:</h5>
 						<p class="text-foreground">{item.content}</p>
 					</div>
 				{/snippet}

@@ -21,5 +21,5 @@
 			{title.toUpperCase()}
 		</Label>
 	</div>
-	<p class="text-xs text-foreground">{text}</p>
+	<span class="text-xs text-foreground">{text}</span>
 </div>
