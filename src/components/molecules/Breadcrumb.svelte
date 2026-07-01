@@ -10,7 +10,7 @@
 
 	/**
 	 * @typedef {Object} Props
-	 * @property {BreadcrumbItem[]} items - The list of breadcrumb items to render.
+	 * @property {BreadcrumbItem[]} [items] - The list of breadcrumb items to render.
 	 */
 
 	/** @type {Props} */
