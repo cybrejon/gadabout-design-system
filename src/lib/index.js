@@ -1,6 +1,7 @@
 export { toast, toastState } from './toast.svelte.js';
 
 // Atoms
+export { default as Alert } from '../components/atoms/Alert.svelte';
 export { default as Button } from '../components/atoms/Button.svelte';
 export { default as Link } from '../components/atoms/Link.svelte';
 export { default as Checkbox } from '../components/atoms/Checkbox.svelte';
@@ -18,6 +19,7 @@ export { default as Toast } from '../components/atoms/Toast.svelte';
 export { default as Toaster } from '../components/atoms/Toaster.svelte';
 export { default as Toggle } from '../components/atoms/Toggle.svelte';
 export { default as Tooltip } from '../components/atoms/Tooltip.svelte';
+export { default as Switch } from '../components/atoms/Switch.svelte';
 
 // Molecules
 export { default as Breadcrumb } from '../components/molecules/Breadcrumb.svelte';
