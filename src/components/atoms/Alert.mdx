@@ -199,8 +199,8 @@ If no `title` is provided, the alert automatically adjusts its padding and align
 	variant="success"
 	title="Settings Saved"
 	description="Your profile preferences have been successfully updated."
-	dismissible={true}
-	ondismiss={handleClose}
+	dismissible="{true}"
+	ondismiss="{handleClose}"
 />
 ```
 
@@ -221,8 +221,8 @@ If no `title` is provided, the alert automatically adjusts its padding and align
 	description="Your trial period ends in 3 days. Upgrade to continue using premium features."
 >
 	{#snippet actions()}
-		<Button size="sm" variant="outline">Learn More</Button>
-		<Button size="sm" variant="normal" onclick={handleRenew}>Upgrade Now</Button>
+	<button size="sm" variant="outline">Learn More</button>
+	<button size="sm" variant="normal" onclick="{handleRenew}">Upgrade Now</button>
 	{/snippet}
 </Alert>
 ```
