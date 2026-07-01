@@ -13,15 +13,15 @@
 </script>
 
 <dl class="leading-5">
-	<dd>
+	<dt>
 		<Label class="text-xxs font-semibold text-foreground-alt">
 			{label.toUpperCase()}
 		</Label>
-	</dd>
-	<dt class="flex items-center gap-2 text-sm">
+	</dt>
+	<dd class="flex items-center gap-2 text-sm">
 		{#if icon}
 			{@render icon()}
 		{/if}
 		<span class="pt-px">{text}</span>
-	</dt>
+	</dd>
 </dl>
