@@ -1,42 +1,33 @@
-# sv
+# Gadabout.ai
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Gadabout builds AI browser agents, software that can autonomously navigate websites, fill forms, extract data, and perform tasks on behalf of users.
 
-## Creating a project
+## Gadabout.ai Design System
 
-If you're seeing this, you've probably already done this step. Congrats!
+This Storybook instance will contain the single source of truth for Gadabout.ai's future and existing products. This DS contains a set of reusable components (cards, tables, charts, forms, etc.) that can be assembled into different dashboard layouts for different clients. Not a single static mockup, but a flexible framework that grows with the product.
 
-```sh
-# create a new project
-npx sv create my-app
-```
+### Gadabout.ai Design System
 
-To recreate this project with the same configuration:
+- **Multi-tenant design:** Same view works for every client (Rengai, Defaqto, etc.)
+- **White-label potential:** Could be rebranded with client's own colors/logo
+- **Modular:** Components can be mixed/matched for different use cases
+- **Scalable:** Works whether a client has 10 sessions or 10,000
 
-```sh
-# recreate this project
-npx sv@0.15.1 create --template minimal --types ts --add prettier eslint tailwindcss="plugins:typography,forms" sveltekit-adapter="adapter:cloudflare+cfTarget:workers" mcp="ide:gemini+setup:local" storybook --install npm gadabout-design-system
-```
+### Links
 
-## Developing
+- [Gadabout.ai Notion](https://www.notion.so/yanneves/Gadabout-1206224e454280fa8c5af37a7aaddb59)
+- [Figma UI Kit](https://www.figma.com/design/ZFflWxxMmiU5JwSyl5BYS9/Gadabout.ai-UI-Kit?m=auto&t=1Ho9bDPid95TuzCb-6)
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Stories
 
-```sh
-npm run dev
+Note that some control sections may be placed at the very last of each stories documentation, or outright omitted if they are too long. You can still view them with each story preview.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Setup
 
-## Building
+- TailwindCSS
+- [Iconify for TailwindCSS 4](https://iconify.design/docs/usage/css/tailwind/tailwind4/)
+- Iconify Lucide Package
+- Basic [bits-ui](https://bits-ui.com/) knowledge (not required)
 
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+> Note:  
+> **Starting the dev server and opening it on a separate tab helps fix rendering issues if they appear when developing locally.**
