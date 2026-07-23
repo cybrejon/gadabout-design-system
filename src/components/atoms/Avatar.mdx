@@ -1,0 +1,72 @@
+import { Canvas, Controls, Meta, Primary } from "@storybook/addon-docs/blocks";
+
+import * as AvatarStories from "./Avatar.stories.svelte";
+
+<Meta of={AvatarStories} />
+
+# Avatar
+
+An avatar is a visual representation of a user, agent, or entity. It typically displays a profile picture, but falls back to initials or a fallback placeholder icon when the image is unavailable or loading.
+
+<Primary />
+<Controls />
+
+## Sizes
+
+The Avatar component supports four standard sizes to accommodate different layout densities:
+
+### Small (`sm` - 32px)
+
+Suitable for dense lists, header navigation, or inline metadata.
+
+<Canvas of={AvatarStories.Small} />
+
+### Medium (`md` - 40px - Default)
+
+The default size, ideal for standard profile views, settings screens, or comment threads.
+
+<Canvas of={AvatarStories.Medium} />
+
+### Large (`lg` - 48px)
+
+Used in primary card views, profile dashboards, or prominent headers.
+
+<Canvas of={AvatarStories.Large} />
+
+### Extra Large (`xl` - 64px)
+
+Designed for user profile overview pages or landing card designs.
+
+<Canvas of={AvatarStories.ExtraLarge} />
+
+## Clickable Behavior
+
+When given an `onclick` handler or an `href` attribute, the Avatar automatically converts its root container to a `<button>` or an `<a>` tag respectively. It gains accessible focus rings, a pointer cursor, and a subtle zoom animation on hover.
+
+<Canvas of={AvatarStories.Clickable} />
+
+## Fallback Behavior
+
+### Initials Fallback
+
+When the image source is empty or fails to load, you can pass a string of initials (e.g. `GA` for Gadabout Agent) to show instead.
+
+<Canvas of={AvatarStories.FallbackInitials} />
+
+### Image Fallback
+
+For image fallback, provide an alternative image path via the `fallbackSrc` prop.
+
+<Canvas of={AvatarStories.FallbackImage} />
+
+## Usage Guidelines
+
+### When to use
+
+- To identify users or AI agents in messages, comments, lists, or headers.
+- To display a visual identifier next to user-specific actions or menus.
+
+### When not to use
+
+- Do not use avatars for general illustrative icons; use custom icons instead.
+- Avoid using very small sizes for complex images that are hard to recognize.
