@@ -5,7 +5,7 @@
 	import ContainerDecorator from '../utils/ContainerDecorator.svelte';
 
 	const { Story } = defineMeta({
-		title: 'Component/Molecules/Forms/Input',
+		title: 'Component/Atoms/Forms/Input',
 		component: Input,
 		parameters: {
 			docs: {
