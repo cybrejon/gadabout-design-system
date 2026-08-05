@@ -1,75 +1,77 @@
 <script>
-	import { resolve } from '$app/paths';
+  import { resolve } from "$app/paths";
+  import { Button } from "bits-ui";
 
-	/**
-	 * @typedef {Object} Props
-	 * @property {import('svelte').Snippet} [children] - The button content.
-	 * @property {'normal' | 'secondary' | 'accent' | 'destructive' | 'ghost' | 'outline alt' | 'outline' | 'text'} [variant] - The visual style of the button.
-	 * @property {string} [href] - An optional URL to make the button behave as a link.
-	 * @property {'normal' | 'sm' | 'text' | 'text md' | 'text sm' | 'sidebar'} [size] - The size and padding of the button.
-	 * @property {string} [class] - Additional CSS classes.
-	 * @property {import('svelte/elements').MouseEventHandler<any>} [onclick] - Click event handler.
-	 * @property {'button' | 'submit' | 'reset'} [type] - The HTML button type.
-	 * @property {boolean} [disabled] - Whether the button is disabled.
-	 * @property {Record<string, any>} [restProps] - Any other props to pass to the underlying element.
-	 */
+  /**
+   * @typedef {Object} Props
+   * @property {import('svelte').Snippet} [children] - The button content.
+   * @property {'normal' | 'secondary' | 'accent' | 'destructive' | 'ghost' | 'outline alt' | 'outline' | 'text'} [variant] - The visual style of the button.
+   * @property {string} [href] - An optional URL to make the button behave as a link.
+   * @property {'normal' | 'sm' | 'text' | 'text md' | 'text sm' | 'sidebar'} [size] - The size and padding of the button.
+   * @property {string} [class] - Additional CSS classes.
+   * @property {import('svelte/elements').MouseEventHandler<any>} [onclick] - Click event handler.
+   * @property {'button' | 'submit' | 'reset'} [type] - The HTML button type.
+   * @property {boolean} [disabled] - Whether the button is disabled.
+   * @property {Record<string, any>} [restProps] - Any other props to pass to the underlying element.
+   */
 
-	/** @type {Props} */
-	let {
-		children,
-		variant = 'normal',
-		href: button_link = '',
-		size = 'normal',
-		class: className = '',
-		onclick,
-		type = 'button',
-		disabled = false,
-		...restProps
-	} = $props();
+  /** @type {Props} */
+  let {
+    children,
+    variant = "normal",
+    href: button_link = "",
+    size = "normal",
+    class: style = "",
+    onclick,
+    type = "button",
+    disabled = false,
+    ...restProps
+  } = $props();
 
-	const styles = {
-		normal: 'bg-primary text-primary-foreground active:text-primary-foreground/80',
-		secondary: 'bg-secondary text-primary-foreground active:text-primary-foreground/80',
-		accent: 'bg-accent text-primary-foreground active:text-primary-foreground/80',
-		destructive: 'bg-destructive text-primary-foreground active:text-primary-foreground/80',
-		ghost: 'hover:bg-primary/10 active:bg-primary/20',
-		'outline alt':
-			'hover:bg-primary/10 active:bg-primary/20 bg-primary/5 inset-ring inset-ring-primary/10',
-		outline:
-			'hover:bg-primary/10 active:bg-primary inset-ring-[1.45px] inset-ring-primary active:text-primary-foreground',
-		text: 'hover:text-secondary'
-	};
+  const styles = {
+    normal:
+      "bg-primary text-primary-foreground active:text-primary-foreground/80",
+    destructive:
+      "bg-destructive text-primary-foreground active:text-primary-foreground/80",
+    ghost: "hover:bg-primary/10 active:bg-primary/20",
+    "outline alt":
+      "hover:bg-primary/10 active:bg-primary/20 bg-primary/5 inset-ring inset-ring-primary/10",
+    outline:
+      "hover:bg-primary/10 active:bg-primary inset-ring-[1.45px] inset-ring-primary active:text-primary-foreground",
+    text: "hover:text-secondary",
+  };
 
-	const sizes = {
-		normal: 'px-6 py-3 gap-3 text-sm',
-		sm: 'px-4 py-2 gap-2 text-xs',
-		text: 'gap-2',
-		'text md': 'gap-2 text-sm',
-		'text sm': 'gap-2 text-xs',
-		sidebar: 'w-full justify-start rounded-xl px-4 py-2 gap-3 text-sm'
-	};
-
-	const baseClass =
-		'inline-flex cursor-pointer flex-nowrap items-center justify-center rounded-full align-middle font-medium outline-offset-4 transition-colors disabled:cursor-not-allowed disabled:opacity-50';
+  const sizes = {
+    normal: "px-6 py-3 gap-3 text-sm",
+    sm: "px-4 py-2 gap-2 text-xs",
+    text: "gap-2",
+    "text md": "gap-2 text-sm",
+    "text sm": "gap-2 text-xs",
+    sidebar: "w-full justify-start rounded-xl px-4 py-2 gap-3 text-sm",
+  };
 </script>
 
 {#if button_link && !disabled}
-	<a
-		href={resolve(button_link)}
-		{onclick}
-		{...restProps}
-		class="{baseClass} {styles[variant]} {sizes[size]} {className}"
-	>
-		{@render children?.()}
-	</a>
+  <a
+    href={resolve(button_link)}
+    {onclick}
+    {...restProps}
+    class="inline-flex cursor-pointer flex-nowrap items-center justify-center rounded-full align-middle font-medium outline-offset-4 transition-colors {styles[
+      variant
+    ]} {sizes[size]} {style}"
+  >
+    {@render children?.()}
+  </a>
 {:else}
-	<button
-		{type}
-		{disabled}
-		{onclick}
-		{...restProps}
-		class="{baseClass} {styles[variant]} {sizes[size]} {className}"
-	>
-		{@render children?.()}
-	</button>
+  <Button.Root
+    {type}
+    {disabled}
+    {...restProps}
+    {onclick}
+    class="inline-flex cursor-pointer flex-nowrap items-center justify-center rounded-full align-middle font-medium outline-offset-4 transition-colors {styles[
+      variant
+    ]} {sizes[size]} {style} disabled:cursor-not-allowed disabled:opacity-50"
+  >
+    {@render children?.()}
+  </Button.Root>
 {/if}
