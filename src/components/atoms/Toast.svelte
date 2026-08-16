@@ -50,7 +50,7 @@
 		{/if}
 		<div class="flex flex-col gap-y-1 pr-4">
 			{#if title}
-				<span class={type === 'error' && 'text-destructive'}>
+				<span class={type === 'error' ? 'text-destructive' : ''}>
 					<p class="text-sm leading-none font-semibold">{title}</p>
 				</span>
 			{/if}
