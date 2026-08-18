@@ -43,6 +43,16 @@
 </Story>
 
 <Story
+	name="Outline Alt"
+	args={{
+		variant: 'outline alt',
+		href: '/'
+	}}
+>
+	Pill (or "Chip")
+</Story>
+
+<Story
 	name="Destructive"
 	args={{
 		variant: 'destructive',
